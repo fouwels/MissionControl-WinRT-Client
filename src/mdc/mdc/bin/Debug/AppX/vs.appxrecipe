@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-02-22T13:30:36.607</Modified>
+      <Modified>2014-02-22T14:56:09.217</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
-      <Modified>2014-02-22T14:17:39.640</Modified>
+      <Modified>2014-02-22T15:43:20.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -55,15 +55,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf">
       <PackagePath>Pages\CrunchPage.xbf</PackagePath>
-      <Modified>2014-02-22T14:17:08.947</Modified>
+      <Modified>2014-02-22T15:04:40.323</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-02-22T14:17:39.359</Modified>
+      <Modified>2014-02-22T15:04:40.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-02-22T13:30:36.473</Modified>
+      <Modified>2014-02-22T14:56:09.149</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

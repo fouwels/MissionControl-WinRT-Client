@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,8 +37,14 @@ namespace mdc
 	    private async void StartRequestSequence()
 	    {
 			CurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded("test");
+
+		    foreach (var item in CurrentResultItems)
+		    {
+			    if (item.mission_statement_investigator == ""){item.mission_statement_investigator = "N/A";}
+				//remove from view?
+		    }
 			
-		    TextBlockDump.Text = await mdc.Services.ApiInteract.GetSummaryRaw("test");
+		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw("test"));
 
 			ResultItemsControl.DataContext = CurrentResultItems;
 	    }

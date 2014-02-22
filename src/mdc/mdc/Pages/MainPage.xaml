@@ -6,79 +6,71 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	<Grid Background="Black">
+	<Grid Background="DarkGray">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="120"/>
-			<ColumnDefinition Width="100"/>
 			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="120"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="100"/>
-			<RowDefinition Height="10"/>
+			<RowDefinition Height="25"/>
+			<RowDefinition Height="4*"/>
+			<RowDefinition Height="25"/>
 			<RowDefinition Height="1*"/>
-			<RowDefinition Height="10"/>
-			<RowDefinition Height="1*"/>
-			<RowDefinition Height="10"/>
 			<RowDefinition Height="100"/>
 		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0"
+		<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"
                     x:Name="QueryPanel"
 					Visibility="Visible">
 			<TextBlock Text="I want information on: " FontFamily="Segoe UI Light" FontSize="40"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Gray" Margin="0,0,0,3" />
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3" />
 			<TextBox Text="" FontFamily="Segoe UI Light" FontSize="40" HorizontalAlignment="Center"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" />
 		</StackPanel>
-		<ScrollViewer Grid.Column="2" Grid.Row="2" Grid.RowSpan="3"
+		<ScrollViewer Grid.Column="1" Grid.Row="2"
                           VerticalScrollMode="Enabled"
                           VerticalScrollBarVisibility="Hidden"
                           HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
-			<ListView x:Name="ResultItemsControl"
+			<GridView x:Name="ResultItemsControl"
 					  IsTapEnabled="False"
 					  IsRightTapEnabled="False"
 					  IsHitTestVisible="True"
 					  IsHoldingEnabled="False"
 					  IsDoubleTapEnabled="False"
 					  ItemsSource="{Binding}">
-				<ListView.ItemTemplate> 
+				<GridView.ItemTemplate>
 					<DataTemplate>
-						<StackPanel>
+						<Grid Background="Silver" Margin="2,0,2,2" Width="400">
+						<StackPanel Margin="10">
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="company_name" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding company_name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding company_name}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+								<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_proof" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+								<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_inevestigator" FontSize="15" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="20" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+								<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 							</StackPanel>
 						</StackPanel>
+						</Grid>
 					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
+				</GridView.ItemTemplate>
+			</GridView>
 		</ScrollViewer>
-		<ScrollViewer Grid.Column="4" Grid.Row="2"
-                          VerticalScrollMode="Enabled"
-                          VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
-			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" />
+		<ScrollViewer Grid.Column="1" Grid.Row="4"
+						VerticalScrollMode="Enabled"
+						VerticalScrollBarVisibility="Hidden"
+						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+				<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" FontSize="15" />
 		</ScrollViewer>
-		<ScrollViewer Grid.Column="4" Grid.Row="4"
-                          VerticalScrollMode="Enabled"
-                          VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
-		</ScrollViewer>
-		</Grid>
+	</Grid>
 </Page>
