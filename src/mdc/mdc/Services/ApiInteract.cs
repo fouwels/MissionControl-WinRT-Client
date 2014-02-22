@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -10,11 +11,11 @@ namespace mdc.Services
 {
     internal static class ApiInteract
     {
-	    public async static Task<List<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
+	    public async static Task<ObservableCollection<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
 	    {
 		    var x = await HttpGet("http://mdump.herokuapp.com/sample.json?company_name=" + company);
 
-		    var y = JsonConvert.DeserializeObject<List<mdc.Templates.SummaryReturn.Root>>(x);
+		    var y = JsonConvert.DeserializeObject<ObservableCollection<mdc.Templates.SummaryReturn.Root>>(x);
 
 		    //throw new NotImplementedException();
 

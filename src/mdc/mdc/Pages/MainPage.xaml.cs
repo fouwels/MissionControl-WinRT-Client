@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,26 +23,23 @@ namespace mdc
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    /// 
     public sealed partial class MainPage : Page
     {
-	    private List<SummaryReturn.Root> currentResultItems;
-        public MainPage()
-        {
-            this.InitializeComponent();
+	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems { get; set; }
 
-	        ResultItemsControl.DataContext = currentResultItems;
-	        //testRquest();
-        }
-
-		//public async void testRquest()
-		//{
-		//	var x = await mdc.Services.ApiInteract.GetSummary("test");
-		//}
+	    public MainPage()
+	    {
+		    this.InitializeComponent();
+	    }
 
 	    private async void StartRequestSequence()
 	    {
-			currentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded("test");
+			CurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded("test");
+			
 		    TextBlockDump.Text = await mdc.Services.ApiInteract.GetSummaryRaw("test");
+
+			ResultItemsControl.DataContext = CurrentResultItems;
 	    }
 	    private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
 	    {

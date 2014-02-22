@@ -9,7 +9,7 @@
 	<Grid Background="Black">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="120"/>
-			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="100"/>
 			<ColumnDefinition Width="1*"/>
 			<ColumnDefinition Width="10"/>
 			<ColumnDefinition Width="1*"/>
@@ -34,41 +34,51 @@
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor"                                />
 		</StackPanel>
-		<ScrollViewer Grid.Column="2" Grid.Row="2"
+		<ScrollViewer Grid.Column="2" Grid.Row="2" Grid.RowSpan="3"
                           VerticalScrollMode="Enabled"
                           VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
-			<ItemsControl VerticalAlignment="Center" HorizontalAlignment="Center" Width="1000"
-                              x:Name="ResultItemsControl"
-                              IsTapEnabled="False"
-                              IsRightTapEnabled="False"
-                              IsHitTestVisible="True"
-                              IsHoldingEnabled="False"
-                              IsDoubleTapEnabled="False">
-				<ItemsControl.ItemTemplate>
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+			<ListView x:Name="ResultItemsControl"
+					  IsTapEnabled="False"
+					  IsRightTapEnabled="False"
+					  IsHitTestVisible="True"
+					  IsHoldingEnabled="False"
+					  IsDoubleTapEnabled="False"
+					  ItemsSource="{Binding}">
+				<ListView.ItemTemplate> 
 					<DataTemplate>
 						<StackPanel>
-							<TextBlock Text="{Binding company_name}" FontSize="20" TextWrapping="Wrap" />
+							<StackPanel Orientation="Vertical">
+								<TextBlock Text="company_name" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding company_name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+							</StackPanel>
+							<StackPanel Orientation="Vertical">
+								<TextBlock Text="mission_statement" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+							</StackPanel>
+							<StackPanel Orientation="Vertical">
+								<TextBlock Text="mission_statement_proof" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+							</StackPanel>
+							<StackPanel Orientation="Vertical">
+								<TextBlock Text="mission_statement_inevestigator" FontSize="15" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="20" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+							</StackPanel>
 						</StackPanel>
 					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>
+				</ListView.ItemTemplate>
+			</ListView>
 		</ScrollViewer>
 		<ScrollViewer Grid.Column="4" Grid.Row="2"
                           VerticalScrollMode="Enabled"
                           VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
 			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" />
-		</ScrollViewer>
-		<ScrollViewer Grid.Column="2" Grid.Row="4"
-                          VerticalScrollMode="Enabled"
-                          VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
 		</ScrollViewer>
 		<ScrollViewer Grid.Column="4" Grid.Row="4"
                           VerticalScrollMode="Enabled"
                           VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
 		</ScrollViewer>
 		</Grid>
 </Page>
