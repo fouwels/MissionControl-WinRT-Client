@@ -1,0 +1,1 @@
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\mdc.csproj;neutral

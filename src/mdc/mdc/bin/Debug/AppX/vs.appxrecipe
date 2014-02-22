@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ZEPHYR</Machine>
+    <WindowsUser>Kaelan</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>aa11d053-5920-4104-803c-cabee3a28255</PackageIdentityName>
+    <RegisteredManifestChecksum>7D290E39B8DF080A2DC350EF139F770B5A86670386E631C7D947A4B60132B502</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>aa11d053-5920-4104-803c-cabee3a28255_1.0.0.0_neutral__v12sgy5srznny</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>aa11d053-5920-4104-803c-cabee3a28255_v12sgy5srznny!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>aa11d053-5920-4104-803c-cabee3a28255</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Kaelan</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-02-22T11:47:19.676</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
+      <PackagePath>mdc.exe</PackagePath>
+      <Modified>2014-02-22T11:48:52.043</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-02-22T11:47:19.162</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf">
+      <PackagePath>Pages\CrunchPage.xbf</PackagePath>
+      <Modified>2014-02-22T11:47:19.164</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
+      <PackagePath>Pages\MainPage.xbf</PackagePath>
+      <Modified>2014-02-22T11:47:19.166</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-02-22T11:47:19.521</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
