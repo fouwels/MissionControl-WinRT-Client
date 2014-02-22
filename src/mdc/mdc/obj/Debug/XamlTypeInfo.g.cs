@@ -124,7 +124,7 @@ namespace mdc.mdc_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[13];
+            _typeNameTable = new string[14];
             _typeNameTable[0] = "mdc.Pages.CrunchPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -136,10 +136,11 @@ namespace mdc.mdc_XamlTypeInfo
             _typeNameTable[8] = "String";
             _typeNameTable[9] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>";
             _typeNameTable[10] = "mdc.Templates.SummaryReturn.NewsSource";
-            _typeNameTable[11] = "Double";
-            _typeNameTable[12] = "mdc.Pages.SubmitCompany";
+            _typeNameTable[11] = "Int32";
+            _typeNameTable[12] = "Double";
+            _typeNameTable[13] = "mdc.Pages.SubmitCompany";
 
-            _typeTable = new global::System.Type[13];
+            _typeTable = new global::System.Type[14];
             _typeTable[0] = typeof(global::mdc.Pages.CrunchPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -151,8 +152,9 @@ namespace mdc.mdc_XamlTypeInfo
             _typeTable[8] = typeof(global::System.String);
             _typeTable[9] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>);
             _typeTable[10] = typeof(global::mdc.Templates.SummaryReturn.NewsSource);
-            _typeTable[11] = typeof(global::System.Double);
-            _typeTable[12] = typeof(global::mdc.Pages.SubmitCompany);
+            _typeTable[11] = typeof(global::System.Int32);
+            _typeTable[12] = typeof(global::System.Double);
+            _typeTable[13] = typeof(global::mdc.Pages.SubmitCompany);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -192,7 +194,7 @@ namespace mdc.mdc_XamlTypeInfo
         private object Activate_4_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::mdc.Templates.SummaryReturn.Root>(); }
         private object Activate_5_Collection() { return new global::System.Collections.ObjectModel.Collection<global::mdc.Templates.SummaryReturn.Root>(); }
         private object Activate_9_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>(); }
-        private object Activate_12_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
+        private object Activate_13_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
         private void VectorAdd_4_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Root>)instance;
@@ -284,19 +286,26 @@ namespace mdc.mdc_XamlTypeInfo
 
             case 10:   //  mdc.Templates.SummaryReturn.NewsSource
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("id");
+                userType.AddMemberName("company_id");
                 userType.AddMemberName("name");
                 userType.AddMemberName("headline");
                 userType.AddMemberName("polarity");
+                userType.AddMemberName("url");
                 xamlType = userType;
                 break;
 
-            case 11:   //  Double
+            case 11:   //  Int32
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  mdc.Pages.SubmitCompany
+            case 12:   //  Double
+                xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  mdc.Pages.SubmitCompany
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_SubmitCompany;
+                userType.Activator = Activate_13_SubmitCompany;
                 xamlType = userType;
                 break;
             }
@@ -342,7 +351,7 @@ namespace mdc.mdc_XamlTypeInfo
         private void set_3_Root_mission_statement_proof(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.Root)instance;
-            that.mission_statement_proof = (global::System.String)Value;
+            that.mission_statement_proof = (global::System.Object)Value;
         }
         private object get_4_Root_mission_statement_investigator(object instance)
         {
@@ -352,7 +361,7 @@ namespace mdc.mdc_XamlTypeInfo
         private void set_4_Root_mission_statement_investigator(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.Root)instance;
-            that.mission_statement_investigator = (global::System.String)Value;
+            that.mission_statement_investigator = (global::System.Object)Value;
         }
         private object get_5_Root_news_sources(object instance)
         {
@@ -364,35 +373,65 @@ namespace mdc.mdc_XamlTypeInfo
             var that = (global::mdc.Templates.SummaryReturn.Root)instance;
             that.news_sources = (global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>)Value;
         }
-        private object get_6_NewsSource_name(object instance)
+        private object get_6_NewsSource_id(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            return that.id;
+        }
+        private void set_6_NewsSource_id(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            that.id = (global::System.Int32)Value;
+        }
+        private object get_7_NewsSource_company_id(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            return that.company_id;
+        }
+        private void set_7_NewsSource_company_id(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            that.company_id = (global::System.Int32)Value;
+        }
+        private object get_8_NewsSource_name(object instance)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             return that.name;
         }
-        private void set_6_NewsSource_name(object instance, object Value)
+        private void set_8_NewsSource_name(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             that.name = (global::System.String)Value;
         }
-        private object get_7_NewsSource_headline(object instance)
+        private object get_9_NewsSource_headline(object instance)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             return that.headline;
         }
-        private void set_7_NewsSource_headline(object instance, object Value)
+        private void set_9_NewsSource_headline(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             that.headline = (global::System.String)Value;
         }
-        private object get_8_NewsSource_polarity(object instance)
+        private object get_10_NewsSource_polarity(object instance)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             return that.polarity;
         }
-        private void set_8_NewsSource_polarity(object instance, object Value)
+        private void set_10_NewsSource_polarity(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             that.polarity = (global::System.Double)Value;
+        }
+        private object get_11_NewsSource_url(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            return that.url;
+        }
+        private void set_11_NewsSource_url(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
+            that.url = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -422,13 +461,13 @@ namespace mdc.mdc_XamlTypeInfo
                 break;
             case "mdc.Templates.SummaryReturn.Root.mission_statement_proof":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Root");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "mission_statement_proof", "String");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "mission_statement_proof", "Object");
                 xamlMember.Getter = get_3_Root_mission_statement_proof;
                 xamlMember.Setter = set_3_Root_mission_statement_proof;
                 break;
             case "mdc.Templates.SummaryReturn.Root.mission_statement_investigator":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Root");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "mission_statement_investigator", "String");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "mission_statement_investigator", "Object");
                 xamlMember.Getter = get_4_Root_mission_statement_investigator;
                 xamlMember.Setter = set_4_Root_mission_statement_investigator;
                 break;
@@ -438,23 +477,41 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlMember.Getter = get_5_Root_news_sources;
                 xamlMember.Setter = set_5_Root_news_sources;
                 break;
+            case "mdc.Templates.SummaryReturn.NewsSource.id":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "id", "Int32");
+                xamlMember.Getter = get_6_NewsSource_id;
+                xamlMember.Setter = set_6_NewsSource_id;
+                break;
+            case "mdc.Templates.SummaryReturn.NewsSource.company_id":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "company_id", "Int32");
+                xamlMember.Getter = get_7_NewsSource_company_id;
+                xamlMember.Setter = set_7_NewsSource_company_id;
+                break;
             case "mdc.Templates.SummaryReturn.NewsSource.name":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
                 xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "name", "String");
-                xamlMember.Getter = get_6_NewsSource_name;
-                xamlMember.Setter = set_6_NewsSource_name;
+                xamlMember.Getter = get_8_NewsSource_name;
+                xamlMember.Setter = set_8_NewsSource_name;
                 break;
             case "mdc.Templates.SummaryReturn.NewsSource.headline":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
                 xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "headline", "String");
-                xamlMember.Getter = get_7_NewsSource_headline;
-                xamlMember.Setter = set_7_NewsSource_headline;
+                xamlMember.Getter = get_9_NewsSource_headline;
+                xamlMember.Setter = set_9_NewsSource_headline;
                 break;
             case "mdc.Templates.SummaryReturn.NewsSource.polarity":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
                 xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "polarity", "Double");
-                xamlMember.Getter = get_8_NewsSource_polarity;
-                xamlMember.Setter = set_8_NewsSource_polarity;
+                xamlMember.Getter = get_10_NewsSource_polarity;
+                xamlMember.Setter = set_10_NewsSource_polarity;
+                break;
+            case "mdc.Templates.SummaryReturn.NewsSource.url":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "url", "String");
+                xamlMember.Getter = get_11_NewsSource_url;
+                xamlMember.Setter = set_11_NewsSource_url;
                 break;
             }
             return xamlMember;
