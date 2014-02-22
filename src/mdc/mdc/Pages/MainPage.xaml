@@ -15,7 +15,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="100"/>
 			<RowDefinition Height="25"/>
-			<RowDefinition Height="2*"/>
+			<RowDefinition Height="3*"/>
 			<RowDefinition Height="25"/>
 			<RowDefinition Height="1*"/>
 			<RowDefinition Height="25"/>
@@ -38,7 +38,7 @@
 					  ItemsSource="{Binding}">
 			<GridView.ItemTemplate>
 				<DataTemplate>
-					<Grid Background="Silver" Margin="2,0,2,2" Width="800">
+					<Grid Background="Silver" Margin="2,0,2,2" Width="800" >
 						<StackPanel Margin="10">
 							<StackPanel Orientation="Vertical">
 								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
@@ -50,7 +50,7 @@
 									VerticalScrollMode="Enabled"
 									VerticalScrollBarVisibility="Hidden"
 									HorizontalScrollMode="Disabled">
-									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="Black" Margin="20,0,0,0" />
 								</ScrollViewer>
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
@@ -88,7 +88,7 @@
 					<AppBarButton x:Uid="Add" Icon="Add" Label="Add Company" Click="AddComp_OnClick"/>
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:Uid="Refresh" Icon="Refresh" Label="Refresh"/>
+					<AppBarButton x:Uid="Submit" Icon="Go" Label="Submit" Click="Submit_OnClick"/>
 				</StackPanel>
 			</Grid>
 		</AppBar>

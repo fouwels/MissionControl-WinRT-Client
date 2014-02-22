@@ -42,7 +42,8 @@ namespace mdc
 
 		    foreach (var item in CurrentResultItems)
 		    {
-			    if (item.mission_statement_investigator == ""){item.mission_statement_investigator = "N/A";}
+			    if (item.mission_statement_investigator == null){item.mission_statement_investigator = "Not Verified!";}
+				if (item.mission_statement_proof == null) { item.mission_statement_proof = "N/A"; }
 				//remove from view?
 		    }
 			
@@ -65,6 +66,11 @@ namespace mdc
 			fr.Navigate(typeof(SubmitCompany));
 			Window.Current.Content = fr;
 			Window.Current.Activate();
+	    }
+
+	    private void Submit_OnClick(object sender, RoutedEventArgs e)
+	    {
+		    StartRequestSequence();
 	    }
     }
 }

@@ -4,6 +4,6 @@
     <UseSimulator>False</UseSimulator>
     <RemoteDebugMachine>10.10.63.76:4018 (Blackjack2)</RemoteDebugMachine>
     <UseAuthentication>True</UseAuthentication>
-    <RemoteDebugEnabled>true</RemoteDebugEnabled>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
 </Project>
