@@ -124,7 +124,7 @@ namespace mdc.mdc_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[12];
+            _typeNameTable = new string[13];
             _typeNameTable[0] = "mdc.Pages.CrunchPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -137,8 +137,9 @@ namespace mdc.mdc_XamlTypeInfo
             _typeNameTable[9] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>";
             _typeNameTable[10] = "mdc.Templates.SummaryReturn.NewsSource";
             _typeNameTable[11] = "Double";
+            _typeNameTable[12] = "mdc.Pages.SubmitCompany";
 
-            _typeTable = new global::System.Type[12];
+            _typeTable = new global::System.Type[13];
             _typeTable[0] = typeof(global::mdc.Pages.CrunchPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -151,6 +152,7 @@ namespace mdc.mdc_XamlTypeInfo
             _typeTable[9] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>);
             _typeTable[10] = typeof(global::mdc.Templates.SummaryReturn.NewsSource);
             _typeTable[11] = typeof(global::System.Double);
+            _typeTable[12] = typeof(global::mdc.Pages.SubmitCompany);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -190,6 +192,7 @@ namespace mdc.mdc_XamlTypeInfo
         private object Activate_4_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::mdc.Templates.SummaryReturn.Root>(); }
         private object Activate_5_Collection() { return new global::System.Collections.ObjectModel.Collection<global::mdc.Templates.SummaryReturn.Root>(); }
         private object Activate_9_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>(); }
+        private object Activate_12_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
         private void VectorAdd_4_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Root>)instance;
@@ -289,6 +292,12 @@ namespace mdc.mdc_XamlTypeInfo
 
             case 11:   //  Double
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  mdc.Pages.SubmitCompany
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_SubmitCompany;
+                xamlType = userType;
                 break;
             }
             return xamlType;

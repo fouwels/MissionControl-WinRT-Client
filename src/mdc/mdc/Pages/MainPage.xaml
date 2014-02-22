@@ -18,14 +18,14 @@
 			<RowDefinition Height="4*"/>
 			<RowDefinition Height="25"/>
 			<RowDefinition Height="1*"/>
-			<RowDefinition Height="100"/>
+			<RowDefinition Height="25"/>
 		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"
+		<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
                     x:Name="QueryPanel"
 					Visibility="Visible">
-			<TextBlock Text="I want information on: " FontFamily="Segoe UI Light" FontSize="40"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3" />
-			<TextBox Text="" FontFamily="Segoe UI Light" FontSize="40" HorizontalAlignment="Center"
+			<TextBlock Text="I want information on: " FontSize="48"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3"/>
+			<TextBox Text="" FontSize="40" HorizontalAlignment="Center"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" />
 		</StackPanel>
@@ -73,4 +73,24 @@
 				<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" FontSize="15" />
 		</ScrollViewer>
 	</Grid>
+
+	<Page.BottomAppBar>
+		<AppBar>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50*"/>
+					<ColumnDefinition Width="50*"/>
+				</Grid.ColumnDefinitions>
+				<!--<StackPanel x:Name="LeftPanel" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+					
+				</StackPanel>-->
+				<StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+					<AppBarButton x:Uid="Add" Icon="Add" Label="Add Company" Click="AddComp_OnClick"/>
+					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
+					<AppBarSeparator/>
+					<AppBarButton x:Uid="Refresh" Icon="Refresh" Label="Refresh"/>
+				</StackPanel>
+			</Grid>
+		</AppBar>
+	</Page.BottomAppBar>
 </Page>

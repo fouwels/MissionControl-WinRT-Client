@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using mdc.Pages;
 using mdc.Services;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using mdc.Templates;
@@ -36,7 +37,8 @@ namespace mdc
 
 	    private async void StartRequestSequence()
 	    {
-			CurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded("test");
+		    var company = CompanyFor.Text;
+			CurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
 
 		    foreach (var item in CurrentResultItems)
 		    {
@@ -44,7 +46,7 @@ namespace mdc
 				//remove from view?
 		    }
 			
-		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw("test"));
+		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company));
 
 			ResultItemsControl.DataContext = CurrentResultItems;
 	    }
@@ -55,6 +57,14 @@ namespace mdc
 				StartRequestSequence();
 			}
 			
+	    }
+
+	    private void AddComp_OnClick(object sender, RoutedEventArgs e)
+	    {
+			var fr = new Frame();
+			fr.Navigate(typeof(SubmitCompany));
+			Window.Current.Content = fr;
+			Window.Current.Activate();
 	    }
     }
 }
