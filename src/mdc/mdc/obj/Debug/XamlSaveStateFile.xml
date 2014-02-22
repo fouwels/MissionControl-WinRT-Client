@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="7ea6b331-61b4-7ecc-52a6-dac46dd03490" />
+    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="3dbd80a6-f616-8586-7be0-3420f6149c41" />
     <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

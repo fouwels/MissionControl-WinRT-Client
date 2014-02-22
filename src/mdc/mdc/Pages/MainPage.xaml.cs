@@ -20,16 +20,20 @@ using mdc.Services;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using mdc.Templates;
 
-namespace mdc
+namespace mdc.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     /// 
-    public sealed partial class MainPage : Page
+	public partial class MainPage : Page
     {
-	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems { get; set; }
-
+	    private ObservableCollection<SummaryReturn.Root> _currentResultItems = new ObservableCollection<SummaryReturn.Root>();
+	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems
+	    {
+		    get { return _currentResultItems; }
+		    //set { _currentResultItems = value; }
+	    }
 	    public MainPage()
 	    {
 		    this.InitializeComponent();
@@ -38,9 +42,9 @@ namespace mdc
 	    private async void StartRequestSequence()
 	    {
 		    var company = CompanyFor.Text;
-			CurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
+			_currentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
 
-		    foreach (var item in CurrentResultItems)
+		    foreach (var item in _currentResultItems)
 		    {
 			    if (item.mission_statement_investigator == null){item.mission_statement_investigator = "Not Verified!";}
 				if (item.mission_statement_proof == null) { item.mission_statement_proof = "N/A"; }
@@ -49,7 +53,7 @@ namespace mdc
 			
 		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company));
 
-			ResultItemsControl.DataContext = CurrentResultItems;
+		    this.DataContext = this;
 	    }
 	    private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
 	    {
