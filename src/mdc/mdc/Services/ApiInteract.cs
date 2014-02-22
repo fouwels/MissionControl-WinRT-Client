@@ -8,15 +8,26 @@ using mdc.Templates;
 
 namespace mdc.Services
 {
-    internal class ApiInteract
+    internal static class ApiInteract
     {
-	    public Task<mdc.Templates.SummaryReturn.Root> GetSummary(string company)
+	    public async static Task<List<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
 	    {
-		    //HttpGet(*url*)
-			throw new NotImplementedException();
-	    }
+		    var x = await HttpGet("http://mdump.herokuapp.com/sample.json?company_name=" + company);
 
-        private async Task<string> HttpGet(string urlIn)
+		    var y = JsonConvert.DeserializeObject<List<mdc.Templates.SummaryReturn.Root>>(x);
+
+		    //throw new NotImplementedException();
+
+		    return y;
+	    }
+		public async static Task<string> GetSummaryRaw(string company)
+		{
+			var x = await HttpGet("http://mdump.herokuapp.com/sample.json?company_name=" + company);
+
+			return x;
+		}
+
+        private static async Task<string> HttpGet(string urlIn)
         {
             var request = (HttpWebRequest) WebRequest.Create(urlIn);
             request.Accept = "application/json";

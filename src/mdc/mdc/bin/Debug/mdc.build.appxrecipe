@@ -17,6 +17,9 @@
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

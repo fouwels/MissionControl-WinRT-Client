@@ -34,3 +34,7 @@ C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\qualifiers.txt
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\qualifiers.txt.intermediate
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\ProjectArchitectures.txt
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Newtonsoft.Json.dll
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Newtonsoft.Json.xml
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\mdc.csprojResolveAssemblyReference.cache
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\mdc.csproj.GenerateResource.Cache

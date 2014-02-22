@@ -6,9 +6,70 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">testbox please ifnore</TextBlock>
-    </Grid>
+	<Grid Background="Black">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="120"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="100"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100"/>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="100"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0"
+                    x:Name="QueryPanel"
+					Visibility="Visible">
+			<TextBlock Text="I want information on: " FontFamily="Segoe UI Light" FontSize="40"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Gray" Margin="0,0,0,3" />
+			<TextBox x:ConnectionId='0' Text="" FontFamily="Segoe UI Light" FontSize="40" HorizontalAlignment="Center"
+                     VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
+                     x:Name="CompanyFor"                                />
+		</StackPanel>
+		<ScrollViewer Grid.Column="2" Grid.Row="2"
+                          VerticalScrollMode="Enabled"
+                          VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+			<ItemsControl VerticalAlignment="Center" HorizontalAlignment="Center" Width="1000"
+                              x:Name="ResultItemsControl"
+                              IsTapEnabled="False"
+                              IsRightTapEnabled="False"
+                              IsHitTestVisible="True"
+                              IsHoldingEnabled="False"
+                              IsDoubleTapEnabled="False">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<StackPanel>
+							<TextBlock Text="{Binding company_name}" FontSize="20" TextWrapping="Wrap" />
+						</StackPanel>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+		<ScrollViewer Grid.Column="4" Grid.Row="2"
+                          VerticalScrollMode="Enabled"
+                          VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" />
+		</ScrollViewer>
+		<ScrollViewer Grid.Column="2" Grid.Row="4"
+                          VerticalScrollMode="Enabled"
+                          VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+		</ScrollViewer>
+		<ScrollViewer Grid.Column="4" Grid.Row="4"
+                          VerticalScrollMode="Enabled"
+                          VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="2">
+		</ScrollViewer>
+		</Grid>
 </Page>
 
