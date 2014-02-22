@@ -18,30 +18,30 @@
 			<RowDefinition Height="25"/>
 			<RowDefinition Height="1*"/>
 			<RowDefinition Height="25"/>
-		</Grid.RowDefinitions>
-		<ScrollViewer Grid.Column="1" Grid.Row="2"
+		</Grid.RowDefinitions >
+		<!--<ScrollViewer Grid.Column="1" Grid.Row="2"
 					   VerticalScrollMode="Enabled"
                           VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
-		<StackPanel>
+                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">-->
+		<StackPanel Grid.Column="1" Grid.Row="2">
 			<StackPanel Orientation="Vertical">
 				<TextBlock Text="company_name:" FontSize="20" TextWrapping="Wrap" Foreground="White"/>
-				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" x:Name="CompanyNameBox" />
 			</StackPanel>
 			<StackPanel Orientation="Vertical">
 				<TextBlock Text="mission_statement:" FontSize="20" TextWrapping="Wrap" Foreground="White"/>
-				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" x:Name="MissionStatementBox"/>
 			</StackPanel>
 			<StackPanel Orientation="Vertical">
 				<TextBlock Text="mission_statement_proof:" FontSize="20" TextWrapping="Wrap" Foreground="White"/>
-				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" x:Name="MissionStatementProofBox" />
 			</StackPanel>
 			<StackPanel Orientation="Vertical">
 				<TextBlock Text="mission_statement_inevestigator:" FontSize="20" TextWrapping="Wrap" Foreground="White"/>
-				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+				<TextBox FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" x:Name="MissionStatementInvestigatorBox" />
 			</StackPanel>
 		</StackPanel>
-	</ScrollViewer>
+	<!--/ScrollViewer-->
 
 	</Grid>
 	<Page.BottomAppBar>
@@ -58,7 +58,7 @@
 					<AppBarButton x:Uid="Back" Icon="Back" Label="Back to Main" Click="BackMain_OnClick"/>
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:Uid="Submit" Icon="Go" Label="Submit"/>
+					<AppBarButton x:Uid="Submit" Icon="Go" Label="Submit" Click="Submit_OnClick"/>
 				</StackPanel>
 			</Grid>
 		</AppBar>

@@ -27,12 +27,24 @@ namespace mdc.Pages
 			this.InitializeComponent();
 		}
 
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			base.OnNavigatedTo(e);
+		}
+
+
+
 		private void BackMain_OnClick(object sender, RoutedEventArgs e)
 		{
 			var fr = new Frame();
 			fr.Navigate(typeof(MainPage));
 			Window.Current.Content = fr;
 			Window.Current.Activate();
+		}
+
+		private void Submit_OnClick(object sender, RoutedEventArgs e)
+		{
+			
 		}
 	}
 }

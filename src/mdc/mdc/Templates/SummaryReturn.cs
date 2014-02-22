@@ -17,7 +17,7 @@ namespace mdc.Templates
 
 		public class Root
 		{
-			public string company_name { get; set; }
+			public string name { get; set; }
 			public string mission_statement { get; set; }
 			public string mission_statement_proof { get; set; }
 			public string mission_statement_investigator { get; set; }

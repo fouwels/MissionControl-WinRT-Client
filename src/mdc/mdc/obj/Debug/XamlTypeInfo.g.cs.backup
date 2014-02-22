@@ -263,7 +263,7 @@ namespace mdc.mdc_XamlTypeInfo
 
             case 7:   //  mdc.Templates.SummaryReturn.Root
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("company_name");
+                userType.AddMemberName("name");
                 userType.AddMemberName("mission_statement");
                 userType.AddMemberName("mission_statement_proof");
                 userType.AddMemberName("mission_statement_investigator");
@@ -314,15 +314,15 @@ namespace mdc.mdc_XamlTypeInfo
             var that = (global::mdc.MainPage)instance;
             that.CurrentResultItems = (global::System.Collections.ObjectModel.ObservableCollection<global::mdc.Templates.SummaryReturn.Root>)Value;
         }
-        private object get_1_Root_company_name(object instance)
+        private object get_1_Root_name(object instance)
         {
             var that = (global::mdc.Templates.SummaryReturn.Root)instance;
-            return that.company_name;
+            return that.name;
         }
-        private void set_1_Root_company_name(object instance, object Value)
+        private void set_1_Root_name(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.Root)instance;
-            that.company_name = (global::System.String)Value;
+            that.name = (global::System.String)Value;
         }
         private object get_2_Root_mission_statement(object instance)
         {
@@ -408,11 +408,11 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlMember.Getter = get_0_MainPage_CurrentResultItems;
                 xamlMember.Setter = set_0_MainPage_CurrentResultItems;
                 break;
-            case "mdc.Templates.SummaryReturn.Root.company_name":
+            case "mdc.Templates.SummaryReturn.Root.name":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Root");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "company_name", "String");
-                xamlMember.Getter = get_1_Root_company_name;
-                xamlMember.Setter = set_1_Root_company_name;
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "name", "String");
+                xamlMember.Getter = get_1_Root_name;
+                xamlMember.Setter = set_1_Root_name;
                 break;
             case "mdc.Templates.SummaryReturn.Root.mission_statement":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Root");

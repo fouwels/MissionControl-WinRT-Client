@@ -11,9 +11,13 @@ namespace mdc.Services
 {
     internal static class ApiInteract
     {
+	    public async static Task PostCompanyDataIn()
+	    {
+		    
+	    }
 	    public async static Task<ObservableCollection<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
 	    {
-		    var x = await HttpGet("http://mdump.herokuapp.com/sample.json?company_name=" + company);
+		    var x = await HttpGet("http://mdump.herokuapp.com/sample.json?name=" + company);
 
 		    var y = JsonConvert.DeserializeObject<ObservableCollection<mdc.Templates.SummaryReturn.Root>>(x);
 
@@ -23,7 +27,7 @@ namespace mdc.Services
 	    }
 		public async static Task<string> GetSummaryRaw(string company)
 		{
-			var x = await HttpGet("http://mdump.herokuapp.com/sample.json?company_name=" + company);
+			var x = await HttpGet("http://mdump.herokuapp.com/sample.json?name=" + company);
 
 			return x;
 		}
