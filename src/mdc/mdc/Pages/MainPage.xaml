@@ -29,10 +29,6 @@
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" />
 		</StackPanel>
-		<!--<ScrollViewer Grid.Column="1" Grid.Row="2"
-                          VerticalScrollMode="Enabled"
-                          VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">-->
 		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2"
 					  IsTapEnabled="False"
 					  IsRightTapEnabled="False"
@@ -40,9 +36,9 @@
 					  IsHoldingEnabled="False"
 					  IsDoubleTapEnabled="False"
 					  ItemsSource="{Binding}">
-				<GridView.ItemTemplate>
-					<DataTemplate>
-						<Grid Background="Silver" Margin="2,0,2,2" Width="800">
+			<GridView.ItemTemplate>
+				<DataTemplate>
+					<Grid Background="Silver" Margin="2,0,2,2" Width="800">
 						<StackPanel Margin="10">
 							<StackPanel Orientation="Vertical">
 								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
@@ -54,7 +50,7 @@
 									VerticalScrollMode="Enabled"
 									VerticalScrollBarVisibility="Hidden"
 									HorizontalScrollMode="Disabled">
-								<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 								</ScrollViewer>
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
@@ -66,11 +62,10 @@
 								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
 							</StackPanel>
 						</StackPanel>
-						</Grid>
-					</DataTemplate>
-				</GridView.ItemTemplate>
-			</GridView>
-		<!--</ScrollViewer>-->
+					</Grid>
+				</DataTemplate>
+			</GridView.ItemTemplate>
+		</GridView>
 		<ScrollViewer Grid.Column="1" Grid.Row="4"
 						VerticalScrollMode="Enabled"
 						VerticalScrollBarVisibility="Hidden"

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,8 +33,6 @@ namespace mdc.Pages
 			base.OnNavigatedTo(e);
 		}
 
-
-
 		private void BackMain_OnClick(object sender, RoutedEventArgs e)
 		{
 			var fr = new Frame();
@@ -42,9 +41,18 @@ namespace mdc.Pages
 			Window.Current.Activate();
 		}
 
-		private void Submit_OnClick(object sender, RoutedEventArgs e)
+		private async void Submit_OnClick(object sender, RoutedEventArgs e)
 		{
-			
+			var y = await mdc.Services.ApiInteract.PostCompanyDataIn(CompanyNameBox.Text, MissionStatementBox.Text);
+			statusCode.Text = y;
+			if (y.ToLower() == "ok")
+			{
+				statusCode.Foreground = new SolidColorBrush(Colors.Green);
+			}
+			else
+			{
+				statusCode.Foreground = new SolidColorBrush(Colors.Red);	
+			}
 		}
 	}
 }
