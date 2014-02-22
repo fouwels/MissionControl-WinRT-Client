@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-02-22T19:41:01.303</Modified>
+      <Modified>2014-02-22T20:24:43.512</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
-      <Modified>2014-02-22T19:54:19.843</Modified>
+      <Modified>2014-02-22T20:49:00.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -55,19 +55,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf">
       <PackagePath>Pages\CrunchPage.xbf</PackagePath>
-      <Modified>2014-02-22T19:53:23.978</Modified>
+      <Modified>2014-02-22T20:49:00.658</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-02-22T19:54:19.582</Modified>
+      <Modified>2014-02-22T20:49:00.660</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\SubmitCompany.xbf">
       <PackagePath>Pages\SubmitCompany.xbf</PackagePath>
-      <Modified>2014-02-22T19:53:23.983</Modified>
+      <Modified>2014-02-22T20:49:00.661</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-02-22T19:41:01.160</Modified>
+      <Modified>2014-02-22T20:24:43.371</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
