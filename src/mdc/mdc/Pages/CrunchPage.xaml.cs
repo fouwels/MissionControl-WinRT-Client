@@ -34,7 +34,7 @@ namespace mdc.Pages
 			TheProgressRing.IsActive = true;
 			//Do stuff
 
-			await Task.Delay(2000);
+			//await Task.Delay(2000);
 
 			TheProgressRing.IsActive = false;
 			var fr = new Frame();
