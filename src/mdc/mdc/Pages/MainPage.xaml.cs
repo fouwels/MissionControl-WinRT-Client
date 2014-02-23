@@ -44,6 +44,7 @@ namespace mdc.Pages
 	    }
 	    private async void StartRequestSequence()
 	    {
+			FadeResultsOut.Begin();
 			var _tempCurrentResultItems = new ObservableCollection<SummaryReturn.Root>();
 			var company = CompanyFor.Text.ToLower();
 
@@ -79,8 +80,9 @@ namespace mdc.Pages
 		    }
 		    _currentResultItems = _tempCurrentResultItems;
 
-			TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company.Split('+')[0]));
+			//TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company.Split('+')[0]));
 		    ResultItemsControl.ItemsSource = CurrentResultItems;
+			FadeResultsIn.Begin();
 		    
 	    }
 	    private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
