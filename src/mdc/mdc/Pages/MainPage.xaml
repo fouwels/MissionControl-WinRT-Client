@@ -43,47 +43,55 @@
 			</GridView.DataContext-->
 			<GridView.ItemTemplate>
 				<DataTemplate>
-					<Grid Background="Silver" Margin="2,0,2,2" Width="1000" >
+					<Grid Background="Silver" Margin="0,0,0,0" Width="1000" >
+						<Grid Margin="10">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="1*"/>
 							<ColumnDefinition Width="1*"/>
 						</Grid.ColumnDefinitions>
-						<StackPanel Margin="10" Grid.Column="0">
+						<StackPanel Margin="10,4,4,10" Grid.Column="0">
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+								<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0"/>
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
+								<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
 								<ScrollViewer
 									VerticalScrollMode="Enabled"
 									VerticalScrollBarVisibility="Hidden"
 									HorizontalScrollMode="Disabled">
-									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="Black" Margin="20,0,0,0" />
+									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="White" Margin="20,0,0,0" />
 								</ScrollViewer>
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+								<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
 							</StackPanel>
 							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="White"/>
-								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+								<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
 							</StackPanel>
 						</StackPanel>
-						<GridView Grid.Column="1" ItemsSource="{Binding news_sources }">
-							<GridView.ItemTemplate>
+						<ListView Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0"
+								  IsTapEnabled="False"
+								  IsRightTapEnabled="False"
+								  IsHitTestVisible="True"
+								  IsHoldingEnabled="False"
+								  IsDoubleTapEnabled="False"
+								  >
+							<ListView.ItemTemplate>
 								<DataTemplate>
 									<Grid>
 										<StackPanel>
-											<TextBlock Text="{Binding headline}"></TextBlock>
-											<TextBlock Text="{Binding url}"></TextBlock>
-											<TextBlock Text="{Binding polarity}"></TextBlock>
+											<TextBlock Text="{Binding headline}" Foreground="Black" />
+											<TextBlock Text="{Binding url}"/>
+											<TextBlock Text="{Binding polarity}"/>
 										</StackPanel>
 									</Grid>
 								</DataTemplate>
-							</GridView.ItemTemplate>
-						</GridView>
+							</ListView.ItemTemplate>
+						</ListView>
+						</Grid>
 					</Grid>
 				</DataTemplate>
 			</GridView.ItemTemplate>

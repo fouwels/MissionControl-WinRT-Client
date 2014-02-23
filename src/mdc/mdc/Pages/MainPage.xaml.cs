@@ -29,7 +29,7 @@ namespace mdc.Pages
 	public partial class MainPage : Page
     {
 	    private ObservableCollection<SummaryReturn.Root> _currentResultItems = new ObservableCollection<SummaryReturn.Root>();
-	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems
+	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems //used by xaml
 	    {
 		    get { return _currentResultItems; }
 		    //set { _currentResultItems = value; }
