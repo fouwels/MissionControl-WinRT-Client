@@ -37,7 +37,7 @@
 					  IsHitTestVisible="True"
 					  IsHoldingEnabled="False"
 					  IsDoubleTapEnabled="False"
-					  ItemsSource="{Binding CurrentResultItems}">
+					  >
 			<!--GridView.DataContext>
 				<pages:MainPage/>
 			</GridView.DataContext-->
@@ -78,6 +78,7 @@
 								  IsHitTestVisible="True"
 								  IsHoldingEnabled="False"
 								  IsDoubleTapEnabled="False"
+			
 								  >
 							<ListView.ItemTemplate>
 								<DataTemplate>

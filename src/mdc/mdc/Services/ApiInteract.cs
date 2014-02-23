@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Windows.Devices.SmartCards;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace mdc.Services
 	    }
 	    public async static Task<ObservableCollection<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
 	    {
-		    var x = await HttpGet("http://mdump.herokuapp.com/sample.json?name=" + company);
+			var x = await HttpGet("http://mdump.herokuapp.com/search/" + company.Trim().Replace(" ", "_") + ".json");
 
 		    var y = JsonConvert.DeserializeObject<ObservableCollection<mdc.Templates.SummaryReturn.Root>>(x);
 
@@ -34,7 +35,8 @@ namespace mdc.Services
 	    }
 		public async static Task<string> GetSummaryRaw(string company)
 		{
-			var x = await HttpGet("http://mdump.herokuapp.com/sample.json?name=" + company);
+			var test = company.Trim().Replace(" ", "_") + ".json";
+			var x = await HttpGet("http://mdump.herokuapp.com/search/" + test );
 
 			return x;
 		}

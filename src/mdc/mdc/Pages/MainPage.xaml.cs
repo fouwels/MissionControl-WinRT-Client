@@ -37,23 +37,48 @@ namespace mdc.Pages
 	    public MainPage()
 	    {
 		    this.InitializeComponent();
+			this.DataContext = this;
+			
 	    }
-
 	    private async void StartRequestSequence()
 	    {
-		    var company = CompanyFor.Text;
-			_currentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
-
-		    foreach (var item in _currentResultItems)
+			var _tempCurrentResultItems = new ObservableCollection<SummaryReturn.Root>();
+		    var company = CompanyFor.Text.ToLower();
+		    if (company.Contains("and"))
 		    {
-			    if (item.mission_statement_investigator == null){item.mission_statement_investigator = "Not Verified!";}
-				if (item.mission_statement_proof == null) { item.mission_statement_proof = "N/A"; }
-				//remove from view?
-		    }
-			
-		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company));
+			    company = company.Replace("and", "+");
+			    var all = company.Split('+');
 
-		    this.DataContext = this;
+			    foreach (var comp in all)
+			    {
+				    foreach (var item in await mdc.Services.ApiInteract.GetSummaryDecoded(comp))
+				    {
+					    _tempCurrentResultItems.Add(item);
+				    }
+			    }
+		    }
+		    else
+		    {
+			    _tempCurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
+
+			    foreach (var item in _tempCurrentResultItems)
+			    {
+				    if (item.mission_statement_investigator == null)
+				    {
+					    item.mission_statement_investigator = "Not Verified!";
+				    }
+				    if (item.mission_statement_proof == null)
+				    {
+					    item.mission_statement_proof = "N/A";
+				    }
+				    //remove from view?
+			    }
+		    }
+		    _currentResultItems = _tempCurrentResultItems;
+
+		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company));
+		    ResultItemsControl.ItemsSource = CurrentResultItems;
+		    
 	    }
 	    private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
 	    {
