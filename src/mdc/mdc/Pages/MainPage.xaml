@@ -10,7 +10,8 @@
     mc:Ignorable="d">
 	<Grid Background="DarkGray">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="120"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="12*"/>
 			<ColumnDefinition Width="1*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
@@ -30,7 +31,7 @@
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" />
 		</StackPanel>
-		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2"
+		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"
 						IsRightTapEnabled="False"
 						IsDoubleTapEnabled="False"
 						SelectionMode="None"
@@ -94,7 +95,7 @@
 		<ScrollViewer Grid.Column="1" Grid.Row="4"
 						VerticalScrollMode="Enabled"
 						VerticalScrollBarVisibility="Hidden"
-						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0" Margin="0,0,30,0">
 			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" FontSize="15" />
 		</ScrollViewer>
 	</Grid>

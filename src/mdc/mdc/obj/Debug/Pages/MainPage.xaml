@@ -10,7 +10,8 @@
     mc:Ignorable="d">
 	<Grid Background="DarkGray">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="120"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="12*"/>
 			<ColumnDefinition Width="1*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
@@ -26,11 +27,11 @@
 					Visibility="Visible">
 			<TextBlock Text="I want information on: " FontSize="48"
                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3"/>
-			<TextBox x:ConnectionId='2' Text="" FontSize="40" HorizontalAlignment="Center"
+			<TextBox x:ConnectionId='0' Text="" FontSize="40" HorizontalAlignment="Center"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor"                                />
 		</StackPanel>
-		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2"
+		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"
 						IsRightTapEnabled="False"
 						IsDoubleTapEnabled="False"
 						SelectionMode="None"
@@ -71,7 +72,7 @@
 									</StackPanel>
 								</StackPanel>
 							</ScrollViewer>
-							<ListView x:ConnectionId='1' Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0" SelectionMode="Single"
+							<ListView x:ConnectionId='0' Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0" SelectionMode="Single"
 									  IsTapEnabled="True"
 									                                                >
 								<ListView.ItemTemplate>
@@ -94,7 +95,7 @@
 		<ScrollViewer Grid.Column="1" Grid.Row="4"
 						VerticalScrollMode="Enabled"
 						VerticalScrollBarVisibility="Hidden"
-						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0" Margin="0,0,30,0">
 			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" FontSize="15" />
 		</ScrollViewer>
 	</Grid>
@@ -107,10 +108,10 @@
 					<ColumnDefinition Width="50*"/>
 				</Grid.ColumnDefinitions>
 				<StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-					<AppBarButton x:ConnectionId='3' x:Uid="Add" Icon="Add" Label="Add Company"                        />
+					<AppBarButton x:ConnectionId='0' x:Uid="Add" Icon="Add" Label="Add Company"                        />
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:ConnectionId='4' x:Uid="Submit" Icon="Go" Label="Submit"                       />
+					<AppBarButton x:ConnectionId='0' x:Uid="Submit" Icon="Go" Label="Submit"                       />
 				</StackPanel>
 			</Grid>
 		</AppBar>
