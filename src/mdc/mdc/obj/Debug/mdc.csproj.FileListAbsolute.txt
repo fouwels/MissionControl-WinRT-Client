@@ -42,3 +42,4 @@ C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\qualifiers.txt
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\qualifiers.txt.intermediate
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\ProjectArchitectures.txt
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\obj\Debug\mdc.csprojResolveAssemblyReference.cache

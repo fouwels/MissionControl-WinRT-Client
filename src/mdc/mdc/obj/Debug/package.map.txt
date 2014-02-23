@@ -1,0 +1,13 @@
+[Files]
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\AppxManifest.xml" "AppxManifest.xml"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe" "mdc.exe"
+"C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll" "Newtonsoft.Json.dll"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\Logo.scale-100.png" "Assets\Logo.scale-100.png"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SmallLogo.scale-100.png" "Assets\SmallLogo.scale-100.png"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SplashScreen.scale-100.png" "Assets\SplashScreen.scale-100.png"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\StoreLogo.scale-100.png" "Assets\StoreLogo.scale-100.png"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\App.xbf" "App.xbf"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf" "Pages\CrunchPage.xbf"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf" "Pages\MainPage.xbf"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\SubmitCompany.xbf" "Pages\SubmitCompany.xbf"
+"C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\resources.pri" "resources.pri"

@@ -1,0 +1,1 @@
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\AppPackages\mdc_1.0.0.0_AnyCPU_Debug_Test\mdc_1.0.0.0_AnyCPU_Debug.appx
