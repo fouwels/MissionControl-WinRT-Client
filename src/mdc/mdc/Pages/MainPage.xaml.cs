@@ -34,6 +34,8 @@ namespace mdc.Pages
 		    get { return _currentResultItems; }
 		    //set { _currentResultItems = value; }
 	    }
+
+	    private string SelectedLink = "";
 	    public MainPage()
 	    {
 		    this.InitializeComponent();
@@ -43,10 +45,11 @@ namespace mdc.Pages
 	    private async void StartRequestSequence()
 	    {
 			var _tempCurrentResultItems = new ObservableCollection<SummaryReturn.Root>();
-		    var company = CompanyFor.Text.ToLower();
-		    if (company.Contains("and"))
+			var company = CompanyFor.Text.ToLower();
+
+			//company = company.Replace("and", "+");
+		    if (company.Contains("+"))
 		    {
-			    company = company.Replace("and", "+");
 			    var all = company.Split('+');
 
 			    foreach (var comp in all)
@@ -76,7 +79,7 @@ namespace mdc.Pages
 		    }
 		    _currentResultItems = _tempCurrentResultItems;
 
-		    TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company));
+			TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company.Split('+')[0]));
 		    ResultItemsControl.ItemsSource = CurrentResultItems;
 		    
 	    }
@@ -100,6 +103,13 @@ namespace mdc.Pages
 	    private void Submit_OnClick(object sender, RoutedEventArgs e)
 	    {
 		    StartRequestSequence();
+	    }
+
+	    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+	    {
+		    var y = (SummaryReturn.NewsSource) e.AddedItems[0];
+		    var z = y.url;
+		    Windows.System.Launcher.LaunchUriAsync(new Uri(z));
 	    }
     }
 }

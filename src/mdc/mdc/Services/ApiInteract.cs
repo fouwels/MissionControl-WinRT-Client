@@ -5,11 +5,16 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using System.Text;
 using System.Threading.Tasks;
+using Windows.Security.Cryptography;
+using Windows.Security.Cryptography.Core;
 using Windows.Devices.SmartCards;
 using Newtonsoft.Json;
 using mdc.Templates;
+using mdc.Services;
 
 namespace mdc.Services
 {
@@ -32,6 +37,16 @@ namespace mdc.Services
 		    //throw new NotImplementedException();
 
 		    return y;
+	    }
+
+	    public static async Task GetTwitters(string hashtag)
+	    {
+
+	    }
+
+	    private async static Task GetOATH(string hastag)
+	    {
+
 	    }
 		public async static Task<string> GetSummaryRaw(string company)
 		{

@@ -12,7 +12,6 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="120"/>
 			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="120"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="100"/>
@@ -27,17 +26,17 @@
 					Visibility="Visible">
 			<TextBlock Text="I want information on: " FontSize="48"
                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3"/>
-			<TextBox x:ConnectionId='1' Text="" FontSize="40" HorizontalAlignment="Center"
+			<TextBox x:ConnectionId='2' Text="" FontSize="40" HorizontalAlignment="Center"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor"                                />
 		</StackPanel>
 		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2"
-					  IsTapEnabled="False"
-					  IsRightTapEnabled="False"
-					  IsHitTestVisible="True"
-					  IsHoldingEnabled="False"
-					  IsDoubleTapEnabled="False"
-					  >
+						IsRightTapEnabled="False"
+						IsDoubleTapEnabled="False"
+						SelectionMode="None"
+						IsHitTestVisible="True"
+						IsHoldingEnabled="False"
+						IsTapEnabled="False">
 			<!--GridView.DataContext>
 				<pages:MainPage/>
 			</GridView.DataContext-->
@@ -45,53 +44,48 @@
 				<DataTemplate>
 					<Grid Background="Silver" Margin="0,0,0,0" Width="1000" >
 						<Grid Margin="10">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="1*"/>
-							<ColumnDefinition Width="1*"/>
-						</Grid.ColumnDefinitions>
-						<StackPanel Margin="10,4,4,10" Grid.Column="0">
-							<StackPanel Orientation="Vertical">
-								<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-								<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0"/>
-							</StackPanel>
-							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-								<ScrollViewer
-									VerticalScrollMode="Enabled"
-									VerticalScrollBarVisibility="Hidden"
-									HorizontalScrollMode="Disabled">
-									<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="White" Margin="20,0,0,0" />
-								</ScrollViewer>
-							</StackPanel>
-							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-								<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
-							</StackPanel>
-							<StackPanel Orientation="Vertical">
-								<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-								<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
-							</StackPanel>
-						</StackPanel>
-						<ListView Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0"
-								  IsTapEnabled="False"
-								  IsRightTapEnabled="False"
-								  IsHitTestVisible="True"
-								  IsHoldingEnabled="False"
-								  IsDoubleTapEnabled="False"
-			
-								  >
-							<ListView.ItemTemplate>
-								<DataTemplate>
-									<Grid>
-										<StackPanel>
-											<TextBlock Text="{Binding headline}" Foreground="Black" />
-											<TextBlock Text="{Binding url}"/>
-											<TextBlock Text="{Binding polarity}" Foreground="{Binding color}"/>
-										</StackPanel>
-									</Grid>
-								</DataTemplate>
-							</ListView.ItemTemplate>
-						</ListView>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+							</Grid.ColumnDefinitions>
+							<ScrollViewer Grid.Column="0"
+										  VerticalScrollMode="Enabled"
+										  VerticalScrollBarVisibility="Hidden"
+										  HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+								<StackPanel Margin="10,4,4,10">
+									<StackPanel Orientation="Vertical">
+										<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+										<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0"/>
+									</StackPanel>
+									<StackPanel Orientation="Vertical">
+										<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+										<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="White" Margin="20,0,0,0" />
+									</StackPanel>
+									<StackPanel Orientation="Vertical">
+										<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+										<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+									</StackPanel>
+									<StackPanel Orientation="Vertical">
+										<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+										<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+									</StackPanel>
+								</StackPanel>
+							</ScrollViewer>
+							<ListView x:ConnectionId='1' Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0" SelectionMode="Single"
+									  IsTapEnabled="True"
+									                                                >
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<Grid>
+											<StackPanel>
+												<TextBlock Text="{Binding headline}" Foreground="Black" />
+												<TextBlock Text="{Binding url}"/>
+												<TextBlock Text="{Binding polarity}" Foreground="{Binding color}"/>
+											</StackPanel>
+										</Grid>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							</ListView>
 						</Grid>
 					</Grid>
 				</DataTemplate>
@@ -113,10 +107,10 @@
 					<ColumnDefinition Width="50*"/>
 				</Grid.ColumnDefinitions>
 				<StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-					<AppBarButton x:ConnectionId='2' x:Uid="Add" Icon="Add" Label="Add Company"                        />
+					<AppBarButton x:ConnectionId='3' x:Uid="Add" Icon="Add" Label="Add Company"                        />
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:ConnectionId='3' x:Uid="Submit" Icon="Go" Label="Submit"                       />
+					<AppBarButton x:ConnectionId='4' x:Uid="Submit" Icon="Go" Label="Submit"                       />
 				</StackPanel>
 			</Grid>
 		</AppBar>
