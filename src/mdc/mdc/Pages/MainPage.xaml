@@ -25,11 +25,11 @@
 		<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
                     x:Name="QueryPanel"
 					Visibility="Visible">
-			<TextBlock Text="I want information on: " FontSize="48"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,3"/>
-			<TextBox Text="" FontSize="40" HorizontalAlignment="Center"
-                     VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
-                     x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" />
+			<TextBlock Text="I want information on: " FontSize="40"
+                       VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,0"/>
+			<TextBox Text="" FontSize="40"
+                     VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0" MinWidth="200"
+                     x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" FontFamily="Global User Interface" Margin="0,0,0,-4"/>
 		</StackPanel>
 		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"
 						IsRightTapEnabled="False"
@@ -47,39 +47,40 @@
 						<Grid Margin="10">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="25px"/>
 								<ColumnDefinition Width="1*"/>
 							</Grid.ColumnDefinitions>
 							<ScrollViewer Grid.Column="0"
 										  VerticalScrollMode="Enabled"
 										  VerticalScrollBarVisibility="Hidden"
-										  HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0">
+										  HorizontalScrollMode="Disabled" BorderThickness="0" FontFamily="Global User Interface">
 								<StackPanel Margin="10,4,4,10">
 									<StackPanel Orientation="Vertical">
-										<TextBlock Text="company_name:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-										<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0"/>
+										<TextBlock Text="Company Name:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+										<TextBlock Text="{Binding name}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" FontFamily="Global User Interface"/>
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
-										<TextBlock Text="mission_statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-										<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="White" Margin="20,0,0,0" />
+										<TextBlock Text="Mission Statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+										<TextBlock Text="{Binding mission_statement}" FontSize="15" TextWrapping="WrapWholeWords" Foreground="White" Margin="20,0,0,0" FontFamily="Global User Interface" />
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
-										<TextBlock Text="mission_statement_proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-										<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
+										<TextBlock Text="Mission Statement Proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+										<TextBlock Text="{Binding mission_statement_proof}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" FontFamily="Global User Interface" />
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
-										<TextBlock Text="mission_statement_inevestigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+										<TextBlock Text="Mission Statement Investigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
 										<TextBlock Text="{Binding mission_statement_investigator}" FontSize="15" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0" />
 									</StackPanel>
 								</StackPanel>
 							</ScrollViewer>
-							<ListView Grid.Column="1" ItemsSource="{Binding news_sources }" Margin="0,4,4,0" SelectionMode="Single"
+							<ListView Grid.Column="2" ItemsSource="{Binding news_sources }" Margin="0,4,4,0" SelectionMode="Single"
 									  IsTapEnabled="True"
-									  SelectionChanged="Selector_OnSelectionChanged">
+									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface">
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
 											<StackPanel>
-												<TextBlock Text="{Binding headline}" Foreground="Black" />
+												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" />
 												<TextBlock Text="{Binding url}"/>
 												<TextBlock Text="{Binding polarity}" Foreground="{Binding color}"/>
 											</StackPanel>
