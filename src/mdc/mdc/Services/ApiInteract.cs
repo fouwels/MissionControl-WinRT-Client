@@ -38,16 +38,6 @@ namespace mdc.Services
 
 		    return y;
 	    }
-
-	    public static async Task GetTwitters(string hashtag)
-	    {
-
-	    }
-
-	    private async static Task GetOATH(string hastag)
-	    {
-
-	    }
 		public async static Task<string> GetSummaryRaw(string company)
 		{
 			var test = company.Trim().Replace(" ", "_") + ".json";

@@ -62,7 +62,7 @@ namespace mdc.Pages
 		    }
 		    else
 		    {
-			    _tempCurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
+				_tempCurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
 
 			    foreach (var item in _tempCurrentResultItems)
 			    {

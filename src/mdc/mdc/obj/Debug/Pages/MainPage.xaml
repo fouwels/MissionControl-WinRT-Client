@@ -8,6 +8,97 @@
     xmlns:pages="using:mdc.Pages"
 
     mc:Ignorable="d">
+	<Page.Resources>
+		<Style x:Key="TextBoxStyle1" TargetType="TextBox">
+			<Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/>
+			<Setter Property="MinHeight" Value="{ThemeResource TextControlThemeMinHeight}"/>
+			<Setter Property="Foreground" Value="{ThemeResource TextBoxForegroundThemeBrush}"/>
+			<Setter Property="Background" Value="{ThemeResource TextBoxBackgroundThemeBrush}"/>
+			<Setter Property="BorderBrush" Value="{ThemeResource TextBoxBorderThemeBrush}"/>
+			<Setter Property="SelectionHighlightColor" Value="{ThemeResource TextSelectionHighlightColorThemeBrush}"/>
+			<Setter Property="BorderThickness" Value="{ThemeResource TextControlBorderThemeThickness}"/>
+			<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+			<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+			<Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+			<Setter Property="Padding" Value="{ThemeResource TextControlThemePadding}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="TextBox">
+						<Grid>
+							<Grid.Resources>
+								<Style x:Name="DeleteButtonStyle" TargetType="Button">
+									
+								</Style>
+							</Grid.Resources>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BackgroundElement">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextBoxDisabledBackgroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="BorderElement">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextBoxDisabledBorderThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="PlaceholderTextContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Normal">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="{ThemeResource TextControlBackgroundThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundElement"/>
+											<DoubleAnimation Duration="0" To="{ThemeResource TextControlBorderThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderElement"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="PointerOver">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="{ThemeResource TextControlPointerOverBackgroundThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundElement"/>
+											<DoubleAnimation Duration="0" To="{ThemeResource TextControlPointerOverBorderThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderElement"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Focused"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="ButtonStates">
+									<VisualState x:Name="ButtonVisible">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="DeleteButton">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="ButtonCollapsed"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="BackgroundElement" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" Margin="{TemplateBinding BorderThickness}" Grid.Row="1" Grid.RowSpan="1"/>
+							<Border x:Name="BorderElement" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="1"/>
+							<ContentPresenter x:Name="HeaderContentPresenter" Grid.ColumnSpan="2" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" Foreground="{ThemeResource TextBoxForegroundHeaderThemeBrush}" FontWeight="Semilight" Margin="0,4,0,4" Grid.Row="0"/>
+							<ScrollViewer x:Name="ContentElement" AutomationProperties.AccessibilityView="Raw" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" IsTabStop="False" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Grid.Row="1" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="Disabled"/>
+							<ContentControl x:Name="PlaceholderTextContentPresenter" Grid.ColumnSpan="2" Content="{TemplateBinding PlaceholderText}" Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}" IsHitTestVisible="False" IsTabStop="False" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Grid.Row="1"/>
+							<Button x:Name="DeleteButton" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="1" FontSize="{TemplateBinding FontSize}" IsTabStop="False" Grid.Row="1" Style="{StaticResource DeleteButtonStyle}" Visibility="Collapsed" VerticalAlignment="Stretch"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
 	<Grid Background="DarkGray">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="1*"/>
@@ -29,7 +120,7 @@
                        VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,0"/-->
 			<TextBox x:ConnectionId='2' PlaceholderText="I want information on: " FontSize="40"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
-                     x:Name="CompanyFor"                                FontFamily="Global User Interface" Margin="0,0,0,-4"/>
+                     x:Name="CompanyFor"                                FontFamily="Global User Interface" Margin="0,0,0,-4" Style="{StaticResource TextBoxStyle1}" />
 		</StackPanel>
 		<ListView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1"
 						IsRightTapEnabled="False"
@@ -57,31 +148,31 @@
 								<StackPanel Margin="10,4,4,10">
 									<StackPanel Orientation="Vertical">
 										<TextBlock Text="Company Name:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding name}" FontSize="12" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" FontFamily="Global User Interface"/>
+										<TextBlock Text="{Binding name}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface"/>
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
 										<TextBlock Text="Mission Statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding mission_statement}" FontSize="12" TextWrapping="WrapWholeWords" Foreground="Black" Margin="20,0,0,0" FontFamily="Global User Interface" />
+										<TextBlock Text="{Binding mission_statement}" FontSize="12" TextWrapping="WrapWholeWords" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
 										<TextBlock Text="Mission Statement Proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding mission_statement_proof}" FontSize="12" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" FontFamily="Global User Interface" />
+										<TextBlock Text="{Binding mission_statement_proof}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
 									</StackPanel>
 									<StackPanel Orientation="Vertical">
 										<TextBlock Text="Mission Statement Investigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-										<TextBlock Text="{Binding mission_statement_investigator}" FontSize="12" TextWrapping="Wrap" Foreground="Black" Margin="20,0,0,0" />
+										<TextBlock Text="{Binding mission_statement_investigator}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" />
 									</StackPanel>
 								</StackPanel>
 							</ScrollViewer>
 							<ListView x:ConnectionId='1' Grid.Column="2" ItemsSource="{Binding news_sources }" Margin="0,0,4,0" SelectionMode="Single"
 									  IsTapEnabled="True"
-									                                                 FontFamily="Global User Interface">
+									                                                 FontFamily="Global User Interface" IsActiveView="True">
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
 											<StackPanel>
 												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
-												<TextBlock Text="{Binding url}" FontSize="12" />
+												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
 												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
 											</StackPanel>
 										</Grid>
