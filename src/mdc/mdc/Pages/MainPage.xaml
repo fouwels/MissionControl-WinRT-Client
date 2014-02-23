@@ -19,7 +19,7 @@
 			<RowDefinition Height="25"/>
 			<RowDefinition Height="3*"/>
 			<RowDefinition Height="25"/>
-			<RowDefinition Height="1*"/>
+			<RowDefinition Height="0"/>
 			<RowDefinition Height="25"/>
 		</Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
@@ -31,7 +31,7 @@
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0" MinWidth="200"
                      x:Name="CompanyFor" KeyDown="CompanyFor_OnKeyDown" FontFamily="Global User Interface" Margin="0,0,0,-4"/>
 		</StackPanel>
-		<GridView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"
+		<ListView x:Name="ResultItemsControl"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1"
 						IsRightTapEnabled="False"
 						IsDoubleTapEnabled="False"
 						SelectionMode="None"
@@ -41,9 +41,9 @@
 			<!--GridView.DataContext>
 				<pages:MainPage/>
 			</GridView.DataContext-->
-			<GridView.ItemTemplate>
+			<ListView.ItemTemplate>
 				<DataTemplate>
-					<Grid Background="Silver" Margin="0,0,0,0" Width="1000" >
+					<Grid Background="Silver" Margin="0,0,0,0"  >
 						<Grid Margin="10">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="1*"/>
@@ -91,8 +91,8 @@
 						</Grid>
 					</Grid>
 				</DataTemplate>
-			</GridView.ItemTemplate>
-		</GridView>
+			</ListView.ItemTemplate>
+		</ListView>
 		<ScrollViewer Grid.Column="1" Grid.Row="4"
 						VerticalScrollMode="Enabled"
 						VerticalScrollBarVisibility="Hidden"
