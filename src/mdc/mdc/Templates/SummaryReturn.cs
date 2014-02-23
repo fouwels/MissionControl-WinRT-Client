@@ -16,6 +16,8 @@ namespace mdc.Templates
 			public string headline { get; set; }
 			public double polarity { get; set; }
 			public string url { get; set; }
+
+			public string color { get; set; }
 		}
 
 		public class Root

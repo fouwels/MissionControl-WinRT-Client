@@ -292,7 +292,6 @@ namespace mdc.mdc_XamlTypeInfo
                 userType.AddMemberName("headline");
                 userType.AddMemberName("polarity");
                 userType.AddMemberName("url");
-                userType.AddMemberName("color");
                 xamlType = userType;
                 break;
 
@@ -429,16 +428,6 @@ namespace mdc.mdc_XamlTypeInfo
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             that.url = (global::System.String)Value;
         }
-        private object get_12_NewsSource_color(object instance)
-        {
-            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
-            return that.color;
-        }
-        private void set_12_NewsSource_color(object instance, object Value)
-        {
-            var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
-            that.color = (global::System.String)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -518,12 +507,6 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "url", "String");
                 xamlMember.Getter = get_11_NewsSource_url;
                 xamlMember.Setter = set_11_NewsSource_url;
-                break;
-            case "mdc.Templates.SummaryReturn.NewsSource.color":
-                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "color", "String");
-                xamlMember.Getter = get_12_NewsSource_color;
-                xamlMember.Setter = set_12_NewsSource_color;
                 break;
             }
             return xamlMember;

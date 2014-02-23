@@ -23,7 +23,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
-      <Modified>2014-02-23T00:04:31.110</Modified>
+      <Modified>2014-02-23T08:42:40.022</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -59,7 +59,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-02-23T00:04:30.853</Modified>
+      <Modified>2014-02-23T08:42:39.786</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\SubmitCompany.xbf">
       <PackagePath>Pages\SubmitCompany.xbf</PackagePath>
