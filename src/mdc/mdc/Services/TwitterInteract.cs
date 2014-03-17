@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,16 +8,38 @@ using LinqToTwitter;
 
 namespace mdc.Services
 {
-	class TwitterInteract
+	static class TwitterInteract
 	{
-		async void GetTweets(string query, IAuthorizer auth) //lol oauth
+
+		public async static Task<IAuthorizer> GetAuth()
+		{
+			var auth = new ApplicationOnlyAuthorizer
+			{
+				CredentialStore = new InMemoryCredentialStore()
+				{
+					ConsumerKey = Secrets.twitterConsumerKey,
+					ConsumerSecret = Secrets.twitterConsumerSecret
+				}
+			};
+
+			await auth.AuthorizeAsync();
+			return auth;
+		}
+
+		public async static Task<string> Search(IAuthorizer auth, string query) //lol oauth
 		{
 			var twitterCtx = new TwitterContext(auth);
-			var searchResults =
-				twitterCtx.Search.Where(search => search.Type == SearchType.Search
-				                                  && search.Query == query);
 
-			var searched = searchResults.SingleOrDefault();
+			var srch = (from search in twitterCtx.Search where search.Type == SearchType.Search && search.Query == "query" && search.ResultType == ResultType.Popular select search).SingleOrDefault();
+
+			Debug.WriteLine("\nQuery: {0}\n", srch.SearchMetaData.Query);
+
+			foreach (var entry in srch.Statuses)
+			{
+				Debug.WriteLine( "ID: {0, -15}, Source: {1}\nContent: {2}\n", entry.StatusID, entry.Source, entry.Text);
+			}
+
+			throw new NotImplementedException();
 		}
 	}
 }

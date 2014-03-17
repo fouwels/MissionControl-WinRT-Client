@@ -34,14 +34,24 @@ namespace mdc.Pages
 		    get { return _currentResultItems; }
 		    //set { _currentResultItems = value; }
 	    }
-
-	    private string SelectedLink = "";
 	    public MainPage()
 	    {
 		    this.InitializeComponent();
 			this.DataContext = this;
 			
 	    }
+
+	    private void StartRequestSequencer()
+	    {
+			StartTwitterAsync();
+			//StartRequestSequence();
+	    }
+		private async void StartTwitterAsync()
+		{
+			var auth = await TwitterInteract.GetAuth();
+			var tweets = await TwitterInteract.Search(auth, CompanyFor.Text.ToLower());
+		}
+
 	    private async void StartRequestSequence()
 	    {
 			FadeResultsOut.Begin();
@@ -89,7 +99,7 @@ namespace mdc.Pages
 	    {
 			if (e.Key == VirtualKey.Enter)
 			{
-				StartRequestSequence();
+			StartRequestSequencer();
 			}
 			
 	    }
@@ -104,9 +114,8 @@ namespace mdc.Pages
 
 	    private void Submit_OnClick(object sender, RoutedEventArgs e)
 	    {
-		    StartRequestSequence();
+		    StartRequestSequencer();
 	    }
-
 	    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 	    {
 		    var y = (SummaryReturn.NewsSource) e.AddedItems[0];

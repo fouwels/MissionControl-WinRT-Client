@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>ZEPHYR</Machine>
+    <Machine>SMOKE</Machine>
     <WindowsUser>Kaelan</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
@@ -14,60 +14,76 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-02-23T14:01:45.732</Modified>
+      <Modified>2014-03-17T19:19:52.163</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\mdc.exe">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
-      <Modified>2014-02-23T14:46:41.730</Modified>
+      <Modified>2014-03-17T20:06:13.210</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\LinqToTwitter.3.0.2\lib\win8\LinqToTwitter.WindowsStore.dll">
+      <PackagePath>LinqToTwitter.WindowsStore.dll</PackagePath>
+      <Modified>2014-03-17T17:49:15.869</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\LinqToTwitter.3.0.2\lib\win8\LinqToTwitterPcl.dll">
+      <PackagePath>LinqToTwitterPcl.dll</PackagePath>
+      <Modified>2014-03-17T17:49:15.876</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2014-02-22T11:52:02.433</Modified>
+      <Modified>2014-03-17T17:47:54.605</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\Microsoft.Net.Http.2.2.18\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+      <Modified>2014-03-17T17:49:15.752</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\Microsoft.Net.Http.2.2.18\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+      <Modified>2014-03-17T17:49:15.759</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T14:01:02.000</Modified>
+      <Modified>2014-03-17T17:47:53.945</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T14:01:02.000</Modified>
+      <Modified>2014-03-17T17:47:53.945</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T14:01:02.000</Modified>
+      <Modified>2014-03-17T17:47:53.945</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T14:01:02.000</Modified>
+      <Modified>2014-03-17T17:47:53.946</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-02-23T12:27:15.567</Modified>
+      <Modified>2014-03-17T17:47:54.063</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\Pages\CrunchPage.xbf">
       <PackagePath>Pages\CrunchPage.xbf</PackagePath>
-      <Modified>2014-02-23T12:27:15.567</Modified>
+      <Modified>2014-03-17T17:47:54.076</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-02-23T14:46:41.434</Modified>
+      <Modified>2014-03-17T19:45:03.973</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\Pages\SubmitCompany.xbf">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\Pages\SubmitCompany.xbf">
       <PackagePath>Pages\SubmitCompany.xbf</PackagePath>
-      <Modified>2014-02-23T12:27:15.570</Modified>
+      <Modified>2014-03-17T17:47:54.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-02-23T14:01:45.669</Modified>
+      <Modified>2014-03-17T19:19:52.127</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
