@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using LinqToTwitter;
 using mdc.Pages;
 using mdc.Services;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -49,7 +50,7 @@ namespace mdc.Pages
 		private async void StartTwitterAsync()
 		{
 			var auth = await TwitterInteract.GetAuth();
-			var tweets = await TwitterInteract.Search(auth, CompanyFor.Text.ToLower());
+			var tweetObject = await TwitterInteract.Search(auth, CompanyFor.Text.ToLower(), ResultType.Popular);
 		}
 
 	    private async void StartRequestSequence()

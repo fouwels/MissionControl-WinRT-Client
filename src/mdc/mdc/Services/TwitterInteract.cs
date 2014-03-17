@@ -26,17 +26,17 @@ namespace mdc.Services
 			return auth;
 		}
 
-		public async static Task<LinqToTwitter.Search> Search(IAuthorizer auth, string query) //lol oauth
+		public async static Task<LinqToTwitter.Search> Search(IAuthorizer auth, string query, ResultType resultType) //lol oauth
 		{
 			var twitterCtx = new TwitterContext(auth);
 
-			var srch = await (from search in twitterCtx.Search where search.Type == SearchType.Search && search.Query == "query" && search.ResultType == ResultType.Popular select search).SingleOrDefaultAsync();
+			var srch = await (from search in twitterCtx.Search where search.Type == SearchType.Search && search.Query == query && search.ResultType == resultType select search).SingleOrDefaultAsync();
 
 			//DEBUG
 			Debug.WriteLine("\nQuery: {0}\n", srch.SearchMetaData.Query);
 			foreach (var status in srch.Statuses)
 			{
-				Debug.WriteLine(status.Text);
+				Debug.WriteLine("\n" + status.Text);
 			}
 
 			return srch;
