@@ -26,20 +26,20 @@ namespace mdc.Services
 			return auth;
 		}
 
-		public async static Task<string> Search(IAuthorizer auth, string query) //lol oauth
+		public async static Task<LinqToTwitter.Search> Search(IAuthorizer auth, string query) //lol oauth
 		{
 			var twitterCtx = new TwitterContext(auth);
 
-			var srch = (from search in twitterCtx.Search where search.Type == SearchType.Search && search.Query == "query" && search.ResultType == ResultType.Popular select search).SingleOrDefault();
+			var srch = await (from search in twitterCtx.Search where search.Type == SearchType.Search && search.Query == "query" && search.ResultType == ResultType.Popular select search).SingleOrDefaultAsync();
 
+			//DEBUG
 			Debug.WriteLine("\nQuery: {0}\n", srch.SearchMetaData.Query);
-
-			foreach (var entry in srch.Statuses)
+			foreach (var status in srch.Statuses)
 			{
-				Debug.WriteLine( "ID: {0, -15}, Source: {1}\nContent: {2}\n", entry.StatusID, entry.Source, entry.Text);
+				Debug.WriteLine(status.Text);
 			}
 
-			throw new NotImplementedException();
+			return srch;
 		}
 	}
 }

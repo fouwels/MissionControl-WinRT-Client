@@ -23,7 +23,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\bin\Debug\mdc.exe">
       <PackagePath>mdc.exe</PackagePath>
-      <Modified>2014-03-17T20:06:13.210</Modified>
+      <Modified>2014-03-17T20:23:09.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\packages\LinqToTwitter.3.0.2\lib\win8\LinqToTwitter.WindowsStore.dll">
       <PackagePath>LinqToTwitter.WindowsStore.dll</PackagePath>
