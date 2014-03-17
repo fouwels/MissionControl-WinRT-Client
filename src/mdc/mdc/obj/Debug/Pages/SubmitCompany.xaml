@@ -55,10 +55,10 @@
 					
 				</StackPanel>-->
 				<StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-					<AppBarButton x:ConnectionId='1' x:Uid="Back" Icon="Back" Label="Back to Main"                         />
+					<AppBarButton x:ConnectionId='0' x:Uid="Back" Icon="Back" Label="Back to Main"                         />
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:ConnectionId='2' x:Uid="Submit" Icon="Go" Label="Submit"                       />
+					<AppBarButton x:ConnectionId='0' x:Uid="Submit" Icon="Go" Label="Submit"                       />
 				</StackPanel>
 			</Grid>
 		</AppBar>
