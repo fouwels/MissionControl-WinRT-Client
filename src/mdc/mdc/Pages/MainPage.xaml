@@ -154,9 +154,11 @@
 			</GridView.DataContext-->
 			<ListView.ItemTemplate>
 				<DataTemplate>
-					<Grid Background="Silver" Margin="0,0,0,0" Width="{Binding ElementName=Container,Path=ActualWidth}" HorizontalAlignment="Stretch">
+					<Grid Background="Silver" Margin="0,0,0,0" Width="{Binding ElementName=Container,Path=ActualWidth}" HorizontalAlignment="Stretch" MaxHeight="400">
 						<Grid Margin="24">
 							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="10px"/>
 								<ColumnDefinition Width="1*"/>
 								<ColumnDefinition Width="10px"/>
 								<ColumnDefinition Width="1*"/>
@@ -194,6 +196,21 @@
 												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
 												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
 												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
+											</StackPanel>
+										</Grid>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							</ListView>
+							<ListView Grid.Column="4" ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
+									  IsTapEnabled="True"
+									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<Grid>
+											<StackPanel>
+												<TextBlock Text="{Binding username}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
+												<TextBlock Text="{Binding text}" Foreground="#FF3F3F3F" FontSize="12" TextWrapping="Wrap" />
+												<TextBlock Text="{Binding timestamp}" FontSize="12" Foreground="Black"/>
 											</StackPanel>
 										</Grid>
 									</DataTemplate>

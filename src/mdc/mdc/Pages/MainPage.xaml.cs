@@ -81,7 +81,7 @@ namespace mdc.Pages
 				    {
 					    text = tweet.Text,
 					    timestamp = tweet.CreatedAt,
-					    username = tweet.ScreenName
+					    username = tweet.User.Name
 				    });
 			    }
 				_tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
