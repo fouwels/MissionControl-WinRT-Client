@@ -33,7 +33,8 @@ public class Tweet
 	public DateTime timestamp { get; set; }
 }
 
-'''
+```
+
 ### Requires:
 * Json.net
 * LinqToTwitter
