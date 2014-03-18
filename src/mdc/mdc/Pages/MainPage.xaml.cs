@@ -29,8 +29,9 @@ namespace mdc.Pages
     /// 
 	public partial class MainPage : Page
     {
-	    private ObservableCollection<SummaryReturn.Root> _currentResultItems = new ObservableCollection<SummaryReturn.Root>();
-	    public ObservableCollection<SummaryReturn.Root> CurrentResultItems //used by xaml
+	    private List<SummaryReturn.Root> _currentResultItems = new List<SummaryReturn.Root>();
+	    private List<string> _companiesList = new List<string>();
+	    public List<SummaryReturn.Root> CurrentResultItems //used by xaml
 	    {
 		    get { return _currentResultItems; }
 		    //set { _currentResultItems = value; }
@@ -44,54 +45,63 @@ namespace mdc.Pages
 
 	    private void StartRequestSequencer()
 	    {
-			StartTwitterAsync();
-			//StartRequestSequence();
+			var companymash = CompanyFor.Text.ToLower();
+			_companiesList.Clear();
+
+		    if (companymash.Contains("+"))
+		    {
+			    foreach (var company in companymash.Split('+')) { _companiesList.Add(company); }
+		    }
+		    else
+		    {
+			    _companiesList.Add(companymash);
+		    }
+			StartRequestSequence();
 	    }
-		private async void StartTwitterAsync()
-		{
-			var auth = await TwitterInteract.GetAuth();
-			var tweetObject = await TwitterInteract.Search(auth, CompanyFor.Text.ToLower(), ResultType.Popular);
-		}
 
 	    private async void StartRequestSequence()
 	    {
 			FadeResultsOut.Begin();
-			var _tempCurrentResultItems = new ObservableCollection<SummaryReturn.Root>();
-			var company = CompanyFor.Text.ToLower();
 
-			//company = company.Replace("and", "+");
-		    if (company.Contains("+"))
+			_currentResultItems.Clear(); //empty the bottle, reset companies
+			var _tempCurrentResultItems = new List<SummaryReturn.Root>();
+		    var _tempCurrentResultItem = new SummaryReturn.Root();
+			var auth = await TwitterInteract.GetAuth();
+
+		    foreach (var company in _companiesList)
 		    {
-			    var all = company.Split('+');
+			    _tempCurrentResultItem = (await mdc.Services.ApiInteract.GetSummaryDecoded(company))[0]; //just grab first copy of the company, no dupes.
+				_tempCurrentResultItem.tweets_popular = new List<SummaryReturn.Tweet>();
 
-			    foreach (var comp in all)
-			    {
-				    foreach (var item in await mdc.Services.ApiInteract.GetSummaryDecoded(comp))
-				    {
-					    _tempCurrentResultItems.Add(item);
-				    }
-			    }
-		    }
-		    else
-		    {
-				_tempCurrentResultItems = await mdc.Services.ApiInteract.GetSummaryDecoded(company);
+				var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
 
-			    foreach (var item in _tempCurrentResultItems)
+			    foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
 			    {
-				    if (item.mission_statement_investigator == null)
+				    _tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet
 				    {
-					    item.mission_statement_investigator = "Not Verified!";
-				    }
-				    if (item.mission_statement_proof == null)
-				    {
-					    item.mission_statement_proof = "N/A";
-				    }
-				    //remove from view?
+					    text = tweet.Text,
+					    timestamp = tweet.CreatedAt,
+					    username = tweet.ScreenName
+				    });
 			    }
+				_tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
 		    }
-		    _currentResultItems = _tempCurrentResultItems;
+
+			foreach (var item in _tempCurrentResultItems) //strip out nulls
+			{
+				if (item.mission_statement_investigator == null)
+				{
+					item.mission_statement_investigator = "Not Verified!";
+				}
+				if (item.mission_statement_proof == null)
+				{
+					item.mission_statement_proof = "N/A";
+				}
+				//remove from view?
+			}
 
 			//TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company.Split('+')[0]));
+			_currentResultItems = _tempCurrentResultItems;
 		    ResultItemsControl.ItemsSource = CurrentResultItems;
 			FadeResultsIn.Begin();
 		    

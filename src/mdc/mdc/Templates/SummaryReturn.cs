@@ -20,6 +20,14 @@ namespace mdc.Templates
 			public string color { get; set; }
 		}
 
+		public class Tweet
+		{
+			public string username { get; set; }
+			public string text { get; set; }
+			
+			public DateTime timestamp { get; set; }
+		}
+
 		public class Root
 		{
 			public string name { get; set; }
@@ -27,6 +35,7 @@ namespace mdc.Templates
 			public object mission_statement_proof { get; set; }
 			public object mission_statement_investigator { get; set; }
 			public List<NewsSource> news_sources { get; set; }
+			public List<Tweet> tweets_popular { get; set; }
 		}
 	}
 }

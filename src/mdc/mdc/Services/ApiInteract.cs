@@ -28,11 +28,11 @@ namespace mdc.Services
 
 		    return await HTTPPost("http://mdump.herokuapp.com/companies", postData);
 	    }
-	    public async static Task<ObservableCollection<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
+	    public async static Task<List<mdc.Templates.SummaryReturn.Root>> GetSummaryDecoded(string company)
 	    {
 			var x = await HttpGet("http://mdump.herokuapp.com/search/" + company.Trim().Replace(" ", "_") + ".json");
 
-		    var y = JsonConvert.DeserializeObject<ObservableCollection<mdc.Templates.SummaryReturn.Root>>(x);
+		    var y = JsonConvert.DeserializeObject<List<mdc.Templates.SummaryReturn.Root>>(x);
 
 		    //throw new NotImplementedException();
 

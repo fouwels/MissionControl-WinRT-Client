@@ -124,37 +124,43 @@ namespace mdc.mdc_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[14];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "mdc.Pages.CrunchPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "mdc.Pages.MainPage";
-            _typeNameTable[4] = "System.Collections.ObjectModel.ObservableCollection`1<mdc.Templates.SummaryReturn.Root>";
-            _typeNameTable[5] = "System.Collections.ObjectModel.Collection`1<mdc.Templates.SummaryReturn.Root>";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "mdc.Templates.SummaryReturn.Root";
-            _typeNameTable[8] = "String";
-            _typeNameTable[9] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>";
-            _typeNameTable[10] = "mdc.Templates.SummaryReturn.NewsSource";
-            _typeNameTable[11] = "Int32";
-            _typeNameTable[12] = "Double";
-            _typeNameTable[13] = "mdc.Pages.SubmitCompany";
+            _typeNameTable[4] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Root>";
+            _typeNameTable[5] = "Object";
+            _typeNameTable[6] = "mdc.Templates.SummaryReturn.Root";
+            _typeNameTable[7] = "String";
+            _typeNameTable[8] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>";
+            _typeNameTable[9] = "mdc.Templates.SummaryReturn.NewsSource";
+            _typeNameTable[10] = "Int32";
+            _typeNameTable[11] = "Double";
+            _typeNameTable[12] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>";
+            _typeNameTable[13] = "mdc.Templates.SummaryReturn.Tweet";
+            _typeNameTable[14] = "System.DateTime";
+            _typeNameTable[15] = "System.ValueType";
+            _typeNameTable[16] = "mdc.Pages.SubmitCompany";
 
-            _typeTable = new global::System.Type[14];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::mdc.Pages.CrunchPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::mdc.Pages.MainPage);
-            _typeTable[4] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::mdc.Templates.SummaryReturn.Root>);
-            _typeTable[5] = typeof(global::System.Collections.ObjectModel.Collection<global::mdc.Templates.SummaryReturn.Root>);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::mdc.Templates.SummaryReturn.Root);
-            _typeTable[8] = typeof(global::System.String);
-            _typeTable[9] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>);
-            _typeTable[10] = typeof(global::mdc.Templates.SummaryReturn.NewsSource);
-            _typeTable[11] = typeof(global::System.Int32);
-            _typeTable[12] = typeof(global::System.Double);
-            _typeTable[13] = typeof(global::mdc.Pages.SubmitCompany);
+            _typeTable[4] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Root>);
+            _typeTable[5] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::mdc.Templates.SummaryReturn.Root);
+            _typeTable[7] = typeof(global::System.String);
+            _typeTable[8] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>);
+            _typeTable[9] = typeof(global::mdc.Templates.SummaryReturn.NewsSource);
+            _typeTable[10] = typeof(global::System.Int32);
+            _typeTable[11] = typeof(global::System.Double);
+            _typeTable[12] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>);
+            _typeTable[13] = typeof(global::mdc.Templates.SummaryReturn.Tweet);
+            _typeTable[14] = typeof(global::System.DateTime);
+            _typeTable[15] = typeof(global::System.ValueType);
+            _typeTable[16] = typeof(global::mdc.Pages.SubmitCompany);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -191,26 +197,26 @@ namespace mdc.mdc_XamlTypeInfo
 
         private object Activate_0_CrunchPage() { return new global::mdc.Pages.CrunchPage(); }
         private object Activate_3_MainPage() { return new global::mdc.Pages.MainPage(); }
-        private object Activate_4_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::mdc.Templates.SummaryReturn.Root>(); }
-        private object Activate_5_Collection() { return new global::System.Collections.ObjectModel.Collection<global::mdc.Templates.SummaryReturn.Root>(); }
-        private object Activate_9_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>(); }
-        private object Activate_13_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
-        private void VectorAdd_4_ObservableCollection(object instance, object item)
+        private object Activate_4_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Root>(); }
+        private object Activate_8_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>(); }
+        private object Activate_12_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>(); }
+        private object Activate_16_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
+        private void VectorAdd_4_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Root>)instance;
             var newItem = (global::mdc.Templates.SummaryReturn.Root)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_5_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Root>)instance;
-            var newItem = (global::mdc.Templates.SummaryReturn.Root)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_9_List(object instance, object item)
+        private void VectorAdd_8_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.NewsSource>)instance;
             var newItem = (global::mdc.Templates.SummaryReturn.NewsSource)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_12_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Tweet>)instance;
+            var newItem = (global::mdc.Templates.SummaryReturn.Tweet)item;
             collection.Add(newItem);
         }
 
@@ -245,46 +251,40 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  System.Collections.ObjectModel.ObservableCollection`1<mdc.Templates.SummaryReturn.Root>
-                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<mdc.Templates.SummaryReturn.Root>"));
-                userType.CollectionAdd = VectorAdd_4_ObservableCollection;
+            case 4:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Root>
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_4_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 5:   //  System.Collections.ObjectModel.Collection`1<mdc.Templates.SummaryReturn.Root>
-                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_5_Collection;
-                userType.CollectionAdd = VectorAdd_5_Collection;
-                xamlType = userType;
-                break;
-
-            case 6:   //  Object
+            case 5:   //  Object
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  mdc.Templates.SummaryReturn.Root
+            case 6:   //  mdc.Templates.SummaryReturn.Root
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("name");
                 userType.AddMemberName("mission_statement");
                 userType.AddMemberName("mission_statement_proof");
                 userType.AddMemberName("mission_statement_investigator");
                 userType.AddMemberName("news_sources");
+                userType.AddMemberName("tweets_popular");
                 xamlType = userType;
                 break;
 
-            case 8:   //  String
+            case 7:   //  String
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>
+            case 8:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.NewsSource>
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_9_List;
+                userType.CollectionAdd = VectorAdd_8_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 10:   //  mdc.Templates.SummaryReturn.NewsSource
+            case 9:   //  mdc.Templates.SummaryReturn.NewsSource
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("id");
                 userType.AddMemberName("company_id");
@@ -296,17 +296,43 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 11:   //  Int32
+            case 10:   //  Int32
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  Double
+            case 11:   //  Double
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  mdc.Pages.SubmitCompany
+            case 12:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_12_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 13:   //  mdc.Templates.SummaryReturn.Tweet
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("username");
+                userType.AddMemberName("text");
+                userType.AddMemberName("timestamp");
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.DateTime
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 15:   //  System.ValueType
+                userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 16:   //  mdc.Pages.SubmitCompany
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_SubmitCompany;
+                userType.Activator = Activate_16_SubmitCompany;
                 xamlType = userType;
                 break;
             }
@@ -439,6 +465,46 @@ namespace mdc.mdc_XamlTypeInfo
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
             that.color = (global::System.String)Value;
         }
+        private object get_13_Root_tweets_popular(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Root)instance;
+            return that.tweets_popular;
+        }
+        private void set_13_Root_tweets_popular(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Root)instance;
+            that.tweets_popular = (global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>)Value;
+        }
+        private object get_14_Tweet_username(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            return that.username;
+        }
+        private void set_14_Tweet_username(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            that.username = (global::System.String)Value;
+        }
+        private object get_15_Tweet_text(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            return that.text;
+        }
+        private void set_15_Tweet_text(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            that.text = (global::System.String)Value;
+        }
+        private object get_16_Tweet_timestamp(object instance)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            return that.timestamp;
+        }
+        private void set_16_Tweet_timestamp(object instance, object Value)
+        {
+            var that = (global::mdc.Templates.SummaryReturn.Tweet)instance;
+            that.timestamp = (global::System.DateTime)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -449,7 +515,7 @@ namespace mdc.mdc_XamlTypeInfo
             {
             case "mdc.Pages.MainPage.CurrentResultItems":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Pages.MainPage");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "CurrentResultItems", "System.Collections.ObjectModel.ObservableCollection`1<mdc.Templates.SummaryReturn.Root>");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "CurrentResultItems", "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Root>");
                 xamlMember.Getter = get_0_MainPage_CurrentResultItems;
                 xamlMember.SetIsReadOnly();
                 break;
@@ -524,6 +590,30 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "color", "String");
                 xamlMember.Getter = get_12_NewsSource_color;
                 xamlMember.Setter = set_12_NewsSource_color;
+                break;
+            case "mdc.Templates.SummaryReturn.Root.tweets_popular":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Root");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "tweets_popular", "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>");
+                xamlMember.Getter = get_13_Root_tweets_popular;
+                xamlMember.Setter = set_13_Root_tweets_popular;
+                break;
+            case "mdc.Templates.SummaryReturn.Tweet.username":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Tweet");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "username", "String");
+                xamlMember.Getter = get_14_Tweet_username;
+                xamlMember.Setter = set_14_Tweet_username;
+                break;
+            case "mdc.Templates.SummaryReturn.Tweet.text":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Tweet");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "text", "String");
+                xamlMember.Getter = get_15_Tweet_text;
+                xamlMember.Setter = set_15_Tweet_text;
+                break;
+            case "mdc.Templates.SummaryReturn.Tweet.timestamp":
+                userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.Tweet");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "timestamp", "System.DateTime");
+                xamlMember.Getter = get_16_Tweet_timestamp;
+                xamlMember.Setter = set_16_Tweet_timestamp;
                 break;
             }
             return xamlMember;
