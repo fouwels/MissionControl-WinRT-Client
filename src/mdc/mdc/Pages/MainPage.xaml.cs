@@ -24,85 +24,85 @@ using mdc.Templates;
 
 namespace mdc.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    /// 
+	/// <summary>
+	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// </summary>
+	/// 
 	public partial class MainPage : Page
-    {
-	    private List<SummaryReturn.Root> _currentResultItems = new List<SummaryReturn.Root>();
-	    private List<string> _companiesList = new List<string>();
-	    private LinqToTwitter.IAuthorizer auth;
-	    private bool areWeTwitAuthed = false;
-	    public List<SummaryReturn.Root> CurrentResultItems //used by xaml
-	    {
-		    get { return _currentResultItems; }
-		    //set { _currentResultItems = value; }
-	    }
-	    public MainPage()
-	    {
-		    this.InitializeComponent();
+	{
+		private List<SummaryReturn.Root> _currentResultItems = new List<SummaryReturn.Root>();
+		private LinqToTwitter.IAuthorizer auth;
+		private bool areWeTwitAuthed = false;
+		public List<SummaryReturn.Root> CurrentResultItems //used by xaml
+		{
+			get { return _currentResultItems; }
+			//set { _currentResultItems = value; }
+		}
+		public MainPage()
+		{
+			this.InitializeComponent();
 			this.DataContext = this;
 			StartAuthHardshake();
-	    }
+		}
 
-	    private async void StartAuthHardshake()
-	    {
-		    areWeTwitAuthed = false;
-		    this.auth = await TwitterInteract.GetAuth();
-		    areWeTwitAuthed = true;
-	    }
+		private async void StartAuthHardshake()
+		{
+			areWeTwitAuthed = false;
+			this.auth = await TwitterInteract.GetAuth();
+			areWeTwitAuthed = true;
+		}
 
-	    private void StartRequestSequencer()
-	    {
-			var companymash = CompanyFor.Text.ToLower();
-			_companiesList.Clear();
-
-		    if (companymash.Contains("+"))
-		    {
-			    foreach (var company in companymash.Split('+')) { _companiesList.Add(company); }
-		    }
-		    else
-		    {
-			    _companiesList.Add(companymash);
-		    }
+		private void StartRequestSequencer()
+		{
 			StartRequestSequence();
-	    }
+		}
 
-	    private async void StartRequestSequence()
-	    {
+		private async void StartRequestSequence()
+		{
+			var companymash = CompanyFor.Text.ToLower();
+			var companiesList = new List<string>();
+
+			if (companymash.Contains("+"))
+			{
+				foreach (var company in companymash.Split('+')) { companiesList.Add(company); }
+			}
+			else
+			{
+				companiesList.Add(companymash);
+			}
+
 			FadeResultsOut.Begin();
 
 			_currentResultItems.Clear(); //empty the bottle, reset companies
 			var _tempCurrentResultItems = new List<SummaryReturn.Root>();
-		    var _tempCurrentResultItem = new SummaryReturn.Root();
+			var _tempCurrentResultItem = new SummaryReturn.Root();
 
-		    foreach (var company in _companiesList)
-		    {
-			    _tempCurrentResultItem = (await mdc.Services.ApiInteract.GetSummaryDecoded(company))[0]; //just grab first copy of the company, no dupes.
+			foreach (var company in companiesList)
+			{
+				_tempCurrentResultItem = (await mdc.Services.ApiInteract.GetSummaryDecoded(company))[0]; //just grab first copy of the company, no dupes.
 				_tempCurrentResultItem.tweets_popular = new List<SummaryReturn.Tweet>();
 
-			    if (areWeTwitAuthed)
-			    {
-				    var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
+				if (areWeTwitAuthed)
+				{
+					var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
 
-				    foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
-				    {
-					    _tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet
-					    {
-						    text = tweet.Text,
-						    timestamp = tweet.CreatedAt,
-						    username = tweet.User.Name
-					    });
-				    }
-			    }
-			    else
-			    {
+					foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
+					{
+						_tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet
+						{
+							text = tweet.Text,
+							timestamp = tweet.CreatedAt,
+							username = tweet.User.Name
+						});
+					}
+				}
+				else
+				{
 					Debug.WriteLine("Error, Still Authorising with TW");
-					_tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet{ text = "Still waiting for Token from Twitter", timestamp = DateTime.Now, username = "System"});
-			    }
-			    _tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
-		    }
+					_tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet { text = "Still waiting for Token from Twitter", timestamp = DateTime.Now, username = "System" });
+				}
+				_tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
+			}
 
 			foreach (var item in _tempCurrentResultItems) //strip out nulls
 			{
@@ -119,36 +119,36 @@ namespace mdc.Pages
 
 			//TextBlockDump.Text = string.Concat("RAW Json output:\n", await mdc.Services.ApiInteract.GetSummaryRaw(company.Split('+')[0]));
 			_currentResultItems = _tempCurrentResultItems;
-		    ResultItemsControl.ItemsSource = CurrentResultItems;
+			ResultItemsControl.ItemsSource = CurrentResultItems;
 			FadeResultsIn.Begin();
-		    
-	    }
-	    private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
-	    {
+
+		}
+		private async void CompanyFor_OnKeyDown(object sender, KeyRoutedEventArgs e)
+		{
 			if (e.Key == VirtualKey.Enter)
 			{
-			StartRequestSequencer();
+				StartRequestSequencer();
 			}
-			
-	    }
 
-	    private void AddComp_OnClick(object sender, RoutedEventArgs e)
-	    {
+		}
+
+		private void AddComp_OnClick(object sender, RoutedEventArgs e)
+		{
 			var fr = new Frame();
 			fr.Navigate(typeof(SubmitCompany));
 			Window.Current.Content = fr;
 			Window.Current.Activate();
-	    }
+		}
 
-	    private void Submit_OnClick(object sender, RoutedEventArgs e)
-	    {
-		    StartRequestSequencer();
-	    }
-	    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-	    {
-		    var y = (SummaryReturn.NewsSource) e.AddedItems[0];
-		    var z = y.url;
-		    Windows.System.Launcher.LaunchUriAsync(new Uri(z));
-	    }
-    }
+		private void Submit_OnClick(object sender, RoutedEventArgs e)
+		{
+			StartRequestSequencer();
+		}
+		private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var y = (SummaryReturn.NewsSource)e.AddedItems[0];
+			var z = y.url;
+			Windows.System.Launcher.LaunchUriAsync(new Uri(z));
+		}
+	}
 }
