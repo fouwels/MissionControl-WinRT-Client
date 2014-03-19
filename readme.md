@@ -35,7 +35,7 @@ public class Tweet
 
 ```
 
-### Requires:
+### Requires: (Use NuGET)
 * Json.net
 * LinqToTwitter
 * .NET 4.5 for WinRT
@@ -47,6 +47,6 @@ Working?
 ###Example:
 (Very unlikely to be current)
 
-![ui](http://i.imgur.com/FGFnfOc.png)
+![ui](http://i.imgur.com/AgMSPJb.png)
 
 Code is good, UI is crap.
