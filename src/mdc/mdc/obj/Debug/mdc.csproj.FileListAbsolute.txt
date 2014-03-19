@@ -94,3 +94,9 @@ E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\obj\Debug\qua
 E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\obj\Debug\qualifiers.txt.intermediate
 E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\obj\Debug\ProjectArchitectures.txt
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\LinqToTwitter.WindowsStore.dll
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\LinqToTwitterPcl.dll
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\System.Net.Http.Extensions.dll
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\System.Net.Http.Primitives.dll
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\System.Net.Http.Extensions.xml
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\bin\Debug\System.Net.Http.Primitives.xml

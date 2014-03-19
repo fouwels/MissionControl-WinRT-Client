@@ -1,10 +1,10 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="82011e1a-ae3d-5585-7e01-f1c9e0145abf" />
-    <ReferenceAssembly PathName="e:\dev\work\hacks\2013\socialimpact\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitter.windowsstore.dll" HashGuid="24d73423-f44c-f54c-28f4-c15276502c56" />
-    <ReferenceAssembly PathName="e:\dev\work\hacks\2013\socialimpact\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitterpcl.dll" HashGuid="a4ba981a-e954-fabf-d828-d0816ce36b90" />
-    <ReferenceAssembly PathName="e:\dev\work\hacks\2013\socialimpact\missiondump_client\src\mdc\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
-    <ReferenceAssembly PathName="e:\dev\work\hacks\2013\socialimpact\missiondump_client\src\mdc\packages\microsoft.net.http.2.2.18\lib\win8\system.net.http.extensions.dll" HashGuid="b50282f8-b9f8-4408-8d49-ba2efe301624" />
-    <ReferenceAssembly PathName="e:\dev\work\hacks\2013\socialimpact\missiondump_client\src\mdc\packages\microsoft.net.http.2.2.18\lib\win8\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
+    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="b8c30696-f674-4ba4-e7a0-aa3b633f6b4b" />
+    <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitter.windowsstore.dll" HashGuid="24d73423-f44c-f54c-28f4-c15276502c56" />
+    <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitterpcl.dll" HashGuid="a4ba981a-e954-fabf-d828-d0816ce36b90" />
+    <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
+    <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\microsoft.net.http.2.2.18\lib\win8\system.net.http.extensions.dll" HashGuid="b50282f8-b9f8-4408-8d49-ba2efe301624" />
+    <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\microsoft.net.http.2.2.18\lib\win8\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

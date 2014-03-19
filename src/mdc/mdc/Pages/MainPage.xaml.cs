@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -31,6 +32,8 @@ namespace mdc.Pages
     {
 	    private List<SummaryReturn.Root> _currentResultItems = new List<SummaryReturn.Root>();
 	    private List<string> _companiesList = new List<string>();
+	    private LinqToTwitter.IAuthorizer auth;
+	    private bool areWeTwitAuthed = false;
 	    public List<SummaryReturn.Root> CurrentResultItems //used by xaml
 	    {
 		    get { return _currentResultItems; }
@@ -40,7 +43,14 @@ namespace mdc.Pages
 	    {
 		    this.InitializeComponent();
 			this.DataContext = this;
-			
+			StartAuthHardshake();
+	    }
+
+	    private async void StartAuthHardshake()
+	    {
+		    areWeTwitAuthed = false;
+		    this.auth = await TwitterInteract.GetAuth();
+		    areWeTwitAuthed = true;
 	    }
 
 	    private void StartRequestSequencer()
@@ -66,25 +76,32 @@ namespace mdc.Pages
 			_currentResultItems.Clear(); //empty the bottle, reset companies
 			var _tempCurrentResultItems = new List<SummaryReturn.Root>();
 		    var _tempCurrentResultItem = new SummaryReturn.Root();
-			var auth = await TwitterInteract.GetAuth();
 
 		    foreach (var company in _companiesList)
 		    {
 			    _tempCurrentResultItem = (await mdc.Services.ApiInteract.GetSummaryDecoded(company))[0]; //just grab first copy of the company, no dupes.
 				_tempCurrentResultItem.tweets_popular = new List<SummaryReturn.Tweet>();
 
-				var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
-
-			    foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
+			    if (areWeTwitAuthed)
 			    {
-				    _tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet
+				    var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
+
+				    foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
 				    {
-					    text = tweet.Text,
-					    timestamp = tweet.CreatedAt,
-					    username = tweet.User.Name
-				    });
+					    _tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet
+					    {
+						    text = tweet.Text,
+						    timestamp = tweet.CreatedAt,
+						    username = tweet.User.Name
+					    });
+				    }
 			    }
-				_tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
+			    else
+			    {
+					Debug.WriteLine("Error, Still Authorising with TW");
+					_tempCurrentResultItem.tweets_popular.Add(new SummaryReturn.Tweet{ text = "Still waiting for Token from Twitter", timestamp = DateTime.Now, username = "System"});
+			    }
+			    _tempCurrentResultItems.Add(_tempCurrentResultItem); //mash back together into one list of above
 		    }
 
 			foreach (var item in _tempCurrentResultItems) //strip out nulls

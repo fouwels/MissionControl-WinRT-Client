@@ -1,1 +1,1 @@
-E:\Dev\Work\Hacks\2013\SocialImpact\missiondump_client\src\mdc\mdc\mdc.csproj;neutral
+C:\Data\hack\Missiondump_Client\src\mdc\mdc\mdc.csproj;neutral
