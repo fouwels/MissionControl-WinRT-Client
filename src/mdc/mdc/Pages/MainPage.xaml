@@ -163,7 +163,11 @@
 								<ColumnDefinition Width="10px"/>
 								<ColumnDefinition Width="1*"/>
 							</Grid.ColumnDefinitions>
-							<ScrollViewer Grid.Column="0"
+							<Grid.RowDefinitions>
+								<RowDefinition Height="20"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<ScrollViewer Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
 										  VerticalScrollMode="Enabled"
 										  VerticalScrollBarVisibility="Hidden"
 										  HorizontalScrollMode="Enabled" BorderThickness="0" FontFamily="Global User Interface">
@@ -186,7 +190,8 @@
 									</StackPanel>
 								</StackPanel>
 							</ScrollViewer>
-							<ListView Grid.Column="2" ItemsSource="{Binding news_sources }" Margin="0,0,0,0" SelectionMode="Single"
+							<ListView Grid.Column="2" Grid.Row="1" 
+									  ItemsSource="{Binding news_sources }" Margin="0,0,0,0" SelectionMode="Single"
 									  IsTapEnabled="True"
 									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
 								<ListView.ItemTemplate>
@@ -201,9 +206,11 @@
 									</DataTemplate>
 								</ListView.ItemTemplate>
 							</ListView>
-							<ListView Grid.Column="4" ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
+							<ListView Grid.Column="4" Grid.Row="1" 
+									  ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
 									  IsTapEnabled="True"
 									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
+								<TextBlock Text="Tweets"/>
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
@@ -216,6 +223,12 @@
 									</DataTemplate>
 								</ListView.ItemTemplate>
 							</ListView>
+							<TextBlock Grid.Row="0" Grid.Column="4" Margin="3,0,0,0" 
+								Text="Tweets"/>
+							<TextBlock Grid.Row="0" Grid.Column="2" Margin="3,0,0,0" 
+								Text="News"/>
+							<!--TextBlock Grid.Row="0" Grid.Column="0" Margin="3,0,0,0" 
+								Text="{Binding name}"/-->
 						</Grid>
 					</Grid>
 				</DataTemplate>
