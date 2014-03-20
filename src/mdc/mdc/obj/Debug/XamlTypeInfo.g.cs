@@ -124,7 +124,7 @@ namespace mdc.mdc_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[18];
             _typeNameTable[0] = "mdc.Pages.CrunchPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -137,13 +137,14 @@ namespace mdc.mdc_XamlTypeInfo
             _typeNameTable[9] = "mdc.Templates.SummaryReturn.NewsSource";
             _typeNameTable[10] = "Int32";
             _typeNameTable[11] = "Double";
-            _typeNameTable[12] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>";
-            _typeNameTable[13] = "mdc.Templates.SummaryReturn.Tweet";
-            _typeNameTable[14] = "System.DateTime";
-            _typeNameTable[15] = "System.ValueType";
-            _typeNameTable[16] = "mdc.Pages.SubmitCompany";
+            _typeNameTable[12] = "Windows.UI.Xaml.Media.SolidColorBrush";
+            _typeNameTable[13] = "System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>";
+            _typeNameTable[14] = "mdc.Templates.SummaryReturn.Tweet";
+            _typeNameTable[15] = "System.DateTime";
+            _typeNameTable[16] = "System.ValueType";
+            _typeNameTable[17] = "mdc.Pages.SubmitCompany";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[18];
             _typeTable[0] = typeof(global::mdc.Pages.CrunchPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -156,11 +157,12 @@ namespace mdc.mdc_XamlTypeInfo
             _typeTable[9] = typeof(global::mdc.Templates.SummaryReturn.NewsSource);
             _typeTable[10] = typeof(global::System.Int32);
             _typeTable[11] = typeof(global::System.Double);
-            _typeTable[12] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>);
-            _typeTable[13] = typeof(global::mdc.Templates.SummaryReturn.Tweet);
-            _typeTable[14] = typeof(global::System.DateTime);
-            _typeTable[15] = typeof(global::System.ValueType);
-            _typeTable[16] = typeof(global::mdc.Pages.SubmitCompany);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Media.SolidColorBrush);
+            _typeTable[13] = typeof(global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>);
+            _typeTable[14] = typeof(global::mdc.Templates.SummaryReturn.Tweet);
+            _typeTable[15] = typeof(global::System.DateTime);
+            _typeTable[16] = typeof(global::System.ValueType);
+            _typeTable[17] = typeof(global::mdc.Pages.SubmitCompany);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -199,8 +201,8 @@ namespace mdc.mdc_XamlTypeInfo
         private object Activate_3_MainPage() { return new global::mdc.Pages.MainPage(); }
         private object Activate_4_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Root>(); }
         private object Activate_8_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.NewsSource>(); }
-        private object Activate_12_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>(); }
-        private object Activate_16_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
+        private object Activate_13_List() { return new global::System.Collections.Generic.List<global::mdc.Templates.SummaryReturn.Tweet>(); }
+        private object Activate_17_SubmitCompany() { return new global::mdc.Pages.SubmitCompany(); }
         private void VectorAdd_4_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Root>)instance;
@@ -213,7 +215,7 @@ namespace mdc.mdc_XamlTypeInfo
             var newItem = (global::mdc.Templates.SummaryReturn.NewsSource)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_12_List(object instance, object item)
+        private void VectorAdd_13_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::mdc.Templates.SummaryReturn.Tweet>)instance;
             var newItem = (global::mdc.Templates.SummaryReturn.Tweet)item;
@@ -304,14 +306,18 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>
+            case 12:   //  Windows.UI.Xaml.Media.SolidColorBrush
+                xamlType = new global::mdc.mdc_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  System.Collections.Generic.List`1<mdc.Templates.SummaryReturn.Tweet>
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_12_List;
+                userType.CollectionAdd = VectorAdd_13_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 13:   //  mdc.Templates.SummaryReturn.Tweet
+            case 14:   //  mdc.Templates.SummaryReturn.Tweet
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("username");
                 userType.AddMemberName("text");
@@ -319,20 +325,20 @@ namespace mdc.mdc_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 14:   //  System.DateTime
+            case 15:   //  System.DateTime
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 15:   //  System.ValueType
+            case 16:   //  System.ValueType
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 16:   //  mdc.Pages.SubmitCompany
+            case 17:   //  mdc.Pages.SubmitCompany
                 userType = new global::mdc.mdc_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_SubmitCompany;
+                userType.Activator = Activate_17_SubmitCompany;
                 xamlType = userType;
                 break;
             }
@@ -463,7 +469,7 @@ namespace mdc.mdc_XamlTypeInfo
         private void set_12_NewsSource_color(object instance, object Value)
         {
             var that = (global::mdc.Templates.SummaryReturn.NewsSource)instance;
-            that.color = (global::System.String)Value;
+            that.color = (global::Windows.UI.Xaml.Media.SolidColorBrush)Value;
         }
         private object get_13_Root_tweets_popular(object instance)
         {
@@ -587,7 +593,7 @@ namespace mdc.mdc_XamlTypeInfo
                 break;
             case "mdc.Templates.SummaryReturn.NewsSource.color":
                 userType = (global::mdc.mdc_XamlTypeInfo.XamlUserType)GetXamlTypeByName("mdc.Templates.SummaryReturn.NewsSource");
-                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "color", "String");
+                xamlMember = new global::mdc.mdc_XamlTypeInfo.XamlMember(this, "color", "Windows.UI.Xaml.Media.SolidColorBrush");
                 xamlMember.Getter = get_12_NewsSource_color;
                 xamlMember.Setter = set_12_NewsSource_color;
                 break;

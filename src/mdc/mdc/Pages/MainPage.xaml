@@ -29,7 +29,7 @@
 						<Grid>
 							<Grid.Resources>
 								<Style x:Name="DeleteButtonStyle" TargetType="Button">
-									
+
 								</Style>
 							</Grid.Resources>
 							<Grid.ColumnDefinitions>
@@ -149,9 +149,9 @@
 						IsHitTestVisible="True"
 						IsHoldingEnabled="False"
 						IsTapEnabled="False">
-			<!--GridView.DataContext>
+			<!--ListView.DataContext>
 				<pages:MainPage/>
-			</GridView.DataContext-->
+			</ListView.DataContext-->
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<Grid Background="Silver" Margin="0,0,0,0" Width="{Binding ElementName=Container,Path=ActualWidth}" HorizontalAlignment="Stretch" MaxHeight="400">
@@ -197,8 +197,8 @@
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
-											<StackPanel>
-												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
+											<StackPanel Background="{Binding color}">
+												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12"/>
 												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
 												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
 											</StackPanel>
@@ -215,7 +215,7 @@
 									<DataTemplate>
 										<Grid>
 											<StackPanel>
-												<TextBlock Text="{Binding username}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
+												<TextBlock Text="{Binding username}" Foreground="Black" FontFamily="Global User Interface" FontSize="12"/>
 												<TextBlock Text="{Binding text}" Foreground="#FF3F3F3F" FontSize="12" TextWrapping="Wrap" />
 												<TextBlock Text="{Binding timestamp}" FontSize="12" Foreground="Black"/>
 											</StackPanel>
@@ -240,6 +240,8 @@
 						HorizontalScrollMode="Disabled" BorderBrush="LightGray" BorderThickness="0" Margin="0,0,30,0">
 			<TextBlock x:Name="TextBlockDump" TextWrapping="Wrap" FontSize="15" />
 		</ScrollViewer>-->
+		<StackPanel x:Name="stackpanel0" >
+		</StackPanel>
 	</Grid>
 
 	<Page.BottomAppBar>

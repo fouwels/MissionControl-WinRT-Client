@@ -114,6 +114,25 @@ namespace mdc.Pages
 				{
 					item.mission_statement_proof = "N/A";
 				}
+				foreach (var story in item.news_sources)
+				{
+					if (story.polarity > 1)
+					{
+						story.color = new SolidColorBrush(Colors.Crimson);
+					}
+					else if (story.polarity > 0.5)
+					{
+						story.color = new SolidColorBrush(Colors.DeepPink);
+					}
+					else if (story.polarity > 0.25)
+					{
+						story.color = new SolidColorBrush(Colors.LightGreen);
+					}
+					else if (story.polarity > 0)
+					{
+						story.color = new SolidColorBrush(Colors.DarkGreen);
+					}
+				}
 				//remove from view?
 			}
 

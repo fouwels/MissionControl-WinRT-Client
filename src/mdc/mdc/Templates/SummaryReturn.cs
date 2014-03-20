@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 
 namespace mdc.Templates
 {
@@ -16,8 +18,7 @@ namespace mdc.Templates
 			public string headline { get; set; }
 			public double polarity { get; set; }
 			public string url { get; set; }
-
-			public string color { get; set; }
+			public SolidColorBrush color { get; set; }
 		}
 
 		public class Tweet
