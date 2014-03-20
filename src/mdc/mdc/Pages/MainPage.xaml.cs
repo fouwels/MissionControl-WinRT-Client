@@ -114,8 +114,10 @@ namespace mdc.Pages
 				{
 					item.mission_statement_proof = "N/A";
 				}
+
 				foreach (var story in item.news_sources)
 				{
+
 					if (story.polarity > 1)
 					{
 						story.color = new SolidColorBrush(Colors.Crimson);

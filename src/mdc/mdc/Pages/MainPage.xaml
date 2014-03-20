@@ -197,11 +197,15 @@
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
-											<StackPanel Background="{Binding color}">
+											<Border BorderThickness="1" BorderBrush="{Binding color}" Margin="-1">
+											<StackPanel>
+												
 												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12"/>
 												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
 												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
+												
 											</StackPanel>
+											</Border>
 										</Grid>
 									</DataTemplate>
 								</ListView.ItemTemplate>

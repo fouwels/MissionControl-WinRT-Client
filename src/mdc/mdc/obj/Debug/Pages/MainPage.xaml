@@ -138,7 +138,7 @@
 					Visibility="Visible">
 			<!--TextBlock Text="I want information on: " FontSize="40"
                        VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,0"/-->
-			<TextBox x:ConnectionId='3' PlaceholderText="I want information on: " FontSize="40"
+			<TextBox x:ConnectionId='0' PlaceholderText="I want information on: " FontSize="40"
                      VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
                      x:Name="CompanyFor"                                FontFamily="Global User Interface" Margin="0,0,0,-4" Style="{StaticResource TextBoxStyle1}" />
 		</StackPanel>
@@ -190,23 +190,27 @@
 									</StackPanel>
 								</StackPanel>
 							</ScrollViewer>
-							<ListView x:ConnectionId='1' Grid.Column="2" Grid.Row="1" 
+							<ListView x:ConnectionId='0' Grid.Column="2" Grid.Row="1" 
 									  ItemsSource="{Binding news_sources }" Margin="0,0,0,0" SelectionMode="Single"
 									  IsTapEnabled="True"
 									                                                 FontFamily="Global User Interface" IsActiveView="True">
 								<ListView.ItemTemplate>
 									<DataTemplate>
 										<Grid>
-											<StackPanel Background="{Binding color}">
+											<Border BorderThickness="1" BorderBrush="{Binding color}" Margin="-1">
+											<StackPanel>
+												
 												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12"/>
 												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
 												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
+												
 											</StackPanel>
+											</Border>
 										</Grid>
 									</DataTemplate>
 								</ListView.ItemTemplate>
 							</ListView>
-							<ListView x:ConnectionId='2' Grid.Column="4" Grid.Row="1" 
+							<ListView x:ConnectionId='0' Grid.Column="4" Grid.Row="1" 
 									  ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
 									  IsTapEnabled="True"
 									                                                 FontFamily="Global User Interface" IsActiveView="True">
@@ -252,10 +256,10 @@
 					<ColumnDefinition Width="50*"/>
 				</Grid.ColumnDefinitions>
 				<StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-					<AppBarButton x:ConnectionId='4' x:Uid="Add" Icon="Add" Label="Add Company"                        />
+					<AppBarButton x:ConnectionId='0' x:Uid="Add" Icon="Add" Label="Add Company"                        />
 					<AppBarButton x:Uid="Invig" Icon="Help" Label="Invigilate Mode"/>
 					<AppBarSeparator/>
-					<AppBarButton x:ConnectionId='5' x:Uid="Submit" Icon="Go" Label="Submit"                       />
+					<AppBarButton x:ConnectionId='0' x:Uid="Submit" Icon="Go" Label="Submit"                       />
 				</StackPanel>
 			</Grid>
 		</AppBar>

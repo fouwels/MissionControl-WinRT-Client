@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="3c6572f9-3f3f-bd48-31d8-9dfc8d068eb6" />
+    <LocalAssembly PathName="c:\data\hack\missiondump_client\src\mdc\mdc\obj\debug\intermediatexaml\mdc.exe" HashGuid="c63db645-0689-0916-091c-5e4190858b33" />
     <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitter.windowsstore.dll" HashGuid="24d73423-f44c-f54c-28f4-c15276502c56" />
     <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\linqtotwitter.3.0.2\lib\win8\linqtotwitterpcl.dll" HashGuid="a4ba981a-e954-fabf-d828-d0816ce36b90" />
     <ReferenceAssembly PathName="c:\data\hack\missiondump_client\src\mdc\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
