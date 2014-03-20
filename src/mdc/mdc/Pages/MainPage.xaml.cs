@@ -31,8 +31,8 @@ namespace mdc.Pages
 	public partial class MainPage : Page
 	{
 		private List<SummaryReturn.Root> _currentResultItems = new List<SummaryReturn.Root>();
-		private LinqToTwitter.IAuthorizer auth;
-		private bool areWeTwitAuthed = false;
+		private LinqToTwitter.IAuthorizer _auth;
+		private bool _areWeTwitAuthed = false;
 		public List<SummaryReturn.Root> CurrentResultItems //used by xaml
 		{
 			get { return _currentResultItems; }
@@ -47,9 +47,9 @@ namespace mdc.Pages
 
 		private async void StartAuthHardshake()
 		{
-			areWeTwitAuthed = false;
-			this.auth = await TwitterInteract.GetAuth();
-			areWeTwitAuthed = true;
+			_areWeTwitAuthed = false;
+			this._auth = await TwitterInteract.GetAuth();
+			_areWeTwitAuthed = true;
 		}
 
 		private void StartRequestSequencer()
@@ -82,9 +82,9 @@ namespace mdc.Pages
 				_tempCurrentResultItem = (await mdc.Services.ApiInteract.GetSummaryDecoded(company))[0]; //just grab first copy of the company, no dupes.
 				_tempCurrentResultItem.tweets_popular = new List<SummaryReturn.Tweet>();
 
-				if (areWeTwitAuthed)
+				if (_areWeTwitAuthed)
 				{
-					var tweetObjects = await TwitterInteract.Search(auth, company, ResultType.Popular); //grab tweets
+					var tweetObjects = await TwitterInteract.Search(_auth, company, ResultType.Popular); //grab tweets
 
 					foreach (var tweet in tweetObjects.Statuses) //mash tweets into the root article object
 					{
