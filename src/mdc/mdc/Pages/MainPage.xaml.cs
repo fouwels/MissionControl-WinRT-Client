@@ -73,7 +73,7 @@ namespace mdc.Pages
 
 			FadeResultsOut.Begin();
 
-			_currentResultItems.Clear(); //empty the bottle, reset companies
+			_currentResultItems.Clear(); //empty the bottle, reset companies todo: dump companies to cache instead
 			var _tempCurrentResultItems = new List<SummaryReturn.Root>();
 			var _tempCurrentResultItem = new SummaryReturn.Root();
 

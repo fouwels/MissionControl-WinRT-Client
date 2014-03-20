@@ -163,59 +163,72 @@
 								<ColumnDefinition Width="10px"/>
 								<ColumnDefinition Width="1*"/>
 							</Grid.ColumnDefinitions>
-							<ScrollViewer Grid.Column="0"
-										  VerticalScrollMode="Enabled"
-										  VerticalScrollBarVisibility="Hidden"
-										  HorizontalScrollMode="Enabled" BorderThickness="0" FontFamily="Global User Interface">
-								<StackPanel Margin="10,4,4,10">
-									<StackPanel Orientation="Vertical">
-										<TextBlock Text="Company Name:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding name}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface"/>
+							<StackPanel Grid.Column="0">
+								<TextBlock Text="{Binding name}"/>
+								<ScrollViewer 
+									VerticalScrollMode="Enabled"
+									VerticalScrollBarVisibility="Hidden"
+									HorizontalScrollMode="Enabled" BorderThickness="0" FontFamily="Global User Interface">
+									<StackPanel Margin="10,4,4,10">
+										<!--<StackPanel Orientation="Vertical">
+											<TextBlock Text="Company Name:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+											<TextBlock Text="{Binding name}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface"/>
+										</StackPanel>-->
+										<StackPanel Orientation="Vertical">
+											<TextBlock Text="Mission Statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+											<TextBlock Text="{Binding mission_statement}" FontSize="12" TextWrapping="WrapWholeWords" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
+										</StackPanel>
+										<StackPanel Orientation="Vertical">
+											<TextBlock Text="Mission Statement Proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
+											<TextBlock Text="{Binding mission_statement_proof}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
+										</StackPanel>
+										<StackPanel Orientation="Vertical">
+											<TextBlock Text="Mission Statement Investigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
+											<TextBlock Text="{Binding mission_statement_investigator}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
+										</StackPanel>
 									</StackPanel>
-									<StackPanel Orientation="Vertical">
-										<TextBlock Text="Mission Statement:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding mission_statement}" FontSize="12" TextWrapping="WrapWholeWords" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
-									</StackPanel>
-									<StackPanel Orientation="Vertical">
-										<TextBlock Text="Mission Statement Proof:" FontSize="12" TextWrapping="Wrap" Foreground="Black" FontFamily="Global User Interface"/>
-										<TextBlock Text="{Binding mission_statement_proof}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
-									</StackPanel>
-									<StackPanel Orientation="Vertical">
-										<TextBlock Text="Mission Statement Investigator:" FontSize="12" TextWrapping="Wrap" Foreground="Black"/>
-										<TextBlock Text="{Binding mission_statement_investigator}" FontSize="12" TextWrapping="Wrap" Foreground="#FF3F3F3F" Margin="20,0,0,0" FontFamily="Global User Interface" />
-									</StackPanel>
-								</StackPanel>
-							</ScrollViewer>
-							<ListView Grid.Column="2" ItemsSource="{Binding news_sources }" Margin="0,0,0,0" SelectionMode="Single"
-									  IsTapEnabled="True"
-									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
-								<ListView.ItemTemplate>
-									<DataTemplate>
-										<Grid>
-											<StackPanel>
-												<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
-												<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
-												<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
-											</StackPanel>
-										</Grid>
-									</DataTemplate>
-								</ListView.ItemTemplate>
-							</ListView>
-							<ListView Grid.Column="4" ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
-									  IsTapEnabled="True"
-									  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
-								<ListView.ItemTemplate>
-									<DataTemplate>
-										<Grid>
-											<StackPanel>
-												<TextBlock Text="{Binding username}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
-												<TextBlock Text="{Binding text}" Foreground="#FF3F3F3F" FontSize="12" TextWrapping="Wrap" />
-												<TextBlock Text="{Binding timestamp}" FontSize="12" Foreground="Black"/>
-											</StackPanel>
-										</Grid>
-									</DataTemplate>
-								</ListView.ItemTemplate>
-							</ListView>
+								</ScrollViewer>
+							</StackPanel>
+							<StackPanel Grid.Column="2">
+								<TextBlock Text="News"/>
+								<ScrollViewer>
+									<ListView  ItemsSource="{Binding news_sources}" Margin="0,0,0,0" SelectionMode="Single"
+											  IsTapEnabled="True"
+											  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
+										<ListView.ItemTemplate>
+											<DataTemplate>
+												<Grid>
+													<StackPanel>
+														<TextBlock Text="{Binding headline}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
+														<TextBlock Text="{Binding url}" Foreground="#FF3F3F3F" FontSize="12" />
+														<TextBlock Text="{Binding polarity}" FontSize="12" Foreground="Black"/>
+													</StackPanel>
+												</Grid>
+											</DataTemplate>
+										</ListView.ItemTemplate>
+									</ListView>
+								</ScrollViewer>
+							</StackPanel>
+							<StackPanel Grid.Column="4">
+								<TextBlock Text="Tweets"/>
+								<ScrollViewer>
+									<ListView ItemsSource="{Binding tweets_popular}" Margin="0,0,0,0" SelectionMode="Single"
+											  IsTapEnabled="True"
+											  SelectionChanged="Selector_OnSelectionChanged" FontFamily="Global User Interface" IsActiveView="True">
+										<ListView.ItemTemplate>
+											<DataTemplate>
+												<Grid>
+													<StackPanel>
+														<TextBlock Text="{Binding username}" Foreground="Black" FontFamily="Global User Interface" FontSize="12" />
+														<TextBlock Text="{Binding text}" Foreground="#FF3F3F3F" FontSize="12" TextWrapping="Wrap" />
+														<TextBlock Text="{Binding timestamp}" FontSize="12" Foreground="Black"/>
+													</StackPanel>
+												</Grid>
+											</DataTemplate>
+										</ListView.ItemTemplate>
+									</ListView>
+								</ScrollViewer>
+							</StackPanel>
 						</Grid>
 					</Grid>
 				</DataTemplate>
