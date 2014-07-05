@@ -1,5 +1,5 @@
 #'Mission Control'
-Client to consume the data produced by missiondump_core + other (ie. Twitter)
+Client to consume the data produced by missiondump_core (https://github.com/atleastimtrying/missiondump) + other (ie. Twitter)
 
 Currently fully populates an object as per below for each company, most of which is displayed in UI?
 
