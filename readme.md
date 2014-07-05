@@ -1,7 +1,9 @@
 #'Mission Control'
-Client to consume the data produced by missiondump_core (https://github.com/atleastimtrying/missiondump) + other (ie. Twitter)
+Client to consume the data produced by missiondump_core (https://github.com/atleastimtrying/missiondump) and others.
 
-Currently fully populates an object as per below for each company, most of which is displayed in UI?
+We make use the mission statement data from above, along with news stories, twitter interaction and Sentiment Analysis on said stories to generate an overview of a Company, with the aim to allow for quick and easy comparison. Currently this is rather limited with the news aspect only hooked into one source, the aim would be to expand this, as well as add more functionality to compare and generate an overview of several desired companies, for example an overview of all the companies producing x product, or invested in y economic sector/
+
+Currently fully populates an object as per below for each company, most of which is displayed in UI.
 
 ```csharp
 
@@ -49,4 +51,6 @@ Working?
 
 ![ui](http://i.imgur.com/AgMSPJb.png)
 
-Code is good, UI is crap.
+Code is hack code but usable, UI needs work.
+
+Kaelan Fouwels 2014 - @kfouwels on Twitter, Github and Outlook.
